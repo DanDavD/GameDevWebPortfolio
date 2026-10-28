@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('../assets/fonts/cormorant-garamond.woff2') format('woff2');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('../assets/fonts/cormorant-garamond-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Hanken Grotesk';
+  src: url('../assets/fonts/hanken-grotesk.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Colour: one ground, one ink, one accent */
+  --ground: #0e0d0b;
+  --raised: #171512;
+  --raised-2: #201d19;
+  --ink: #e6e0d2;
+  --muted: #a39b8a;
+  --accent: #c9a35a;
+  --accent-ink: #14110c;
+  --blood: #8e1b17;
+
+  /* Type */
+  --display: 'Cormorant Garamond', 'Iowan Old Style', 'Palatino Linotype', Palatino, serif;
+  --text: 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --step-small: 0.875rem;                          /* 14px */
+  --step-text: 1.0625rem;                          /* 17px */
+  --step-lead: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);   /* 20-24px */
+  --step-head: clamp(2rem, 1.4rem + 2.6vw, 3.75rem);     /* 32-60px */
+  --step-display: clamp(3.5rem, 2rem + 6.4vw, 8.5rem);   /* 56-136px */
+
+  /* Space */
+  --margin: clamp(1.25rem, 0.8rem + 1.8vw, 2.5rem);
+  --section: clamp(7rem, 5rem + 8vw, 13rem);
+  --radius: 0;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --press: 140ms;
+  --quick: 200ms;
+  --enter: 640ms;
+}

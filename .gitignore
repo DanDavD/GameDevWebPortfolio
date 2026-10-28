@@ -1,0 +1,3 @@
+# Browser-check output (Playwright screenshots, taste-skill inspector)
+.playwright-mcp/
+.taste-skill/

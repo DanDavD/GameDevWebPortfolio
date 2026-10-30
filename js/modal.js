@@ -20,10 +20,23 @@ const icon = (id) => {
 };
 const button = (href, label, iconId, variant = 'solid') => {
   const link = el(href ? 'a' : 'span', `button button--${variant}`);
-  if (href) link.href = href;
-  else link.setAttribute('aria-disabled', 'true');
+  if (href) {
+    link.href = href;
+    if (/^https?:\/\//i.test(href)) {
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    }
+  } else {
+    link.setAttribute('aria-disabled', 'true');
+  }
   link.append(icon(iconId), document.createTextNode(label));
   return link;
+};
+
+const getYouTubeId = (url) => {
+  if (!url) return null;
+  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/i);
+  return match ? match[1] : null;
 };
 
 function render(project) {
@@ -49,14 +62,8 @@ function render(project) {
   const actions = el('div', 'actions');
   actions.append(button(project.links.github, 'View on GitHub', 'i-github', 'solid'));
   actions.append(button(project.links.itch, project.links.itch ? 'Play on Itch.io' : 'Itch.io page coming soon', 'i-gamepad', 'quiet'));
-  const note = el('p', 'actions__note');
-  if (project.links.release) {
-    const link = el('a', null, 'download the Windows build (v0.1.0)');
-    link.href = project.links.release;
-    note.append(document.createTextNode('Until then, '), link, document.createTextNode('.'));
-  }
   const left = el('div');
-  left.append(stats, actions, note);
+  left.append(stats, actions);
 
   // Right: what it is and what I built
   const summary = el('ul', 'summary');
@@ -81,9 +88,79 @@ function render(project) {
   } else {
     preview.append(icon('i-gamepad'), el('span', null, 'Gameplay preview coming soon'));
   }
-  const video = el(project.links.youtube ? 'a' : 'div', 'slot slot--video');
-  if (project.links.youtube) video.href = project.links.youtube;
-  video.append(icon('i-play'), el('strong', null, 'Video showcase'), el('span', null, project.links.youtube ? 'Watch on YouTube' : 'Coming soon to YouTube'));
+
+  const ytId = getYouTubeId(project.links.youtube);
+  let video;
+
+  if (ytId) {
+    video = el('div', 'slot slot--video slot--player');
+    video.setAttribute('role', 'region');
+    video.setAttribute('aria-label', `${project.title} video showcase`);
+
+    const thumb = el('img', 'slot__thumb');
+    thumb.src = `https://img.youtube.com/vi/${ytId}/maxresdefault.jpg`;
+    thumb.alt = `${project.title} gameplay showcase thumbnail`;
+    thumb.loading = 'lazy';
+    thumb.decoding = 'async';
+    thumb.addEventListener('error', () => {
+      thumb.src = `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`;
+    }, { once: true });
+
+    const overlay = el('div', 'slot__overlay');
+
+    const extLink = el('a', 'slot__external');
+    extLink.href = project.links.youtube;
+    extLink.target = '_blank';
+    extLink.rel = 'noopener noreferrer';
+    extLink.setAttribute('aria-label', `Watch ${project.title} gameplay showcase on YouTube (opens in new tab)`);
+    extLink.append(icon('i-youtube'), document.createTextNode('Watch on YouTube'));
+    extLink.addEventListener('click', (e) => e.stopPropagation());
+
+    const playBtn = el('button', 'slot__play');
+    playBtn.type = 'button';
+    playBtn.setAttribute('aria-label', `Play ${project.title} gameplay showcase`);
+    playBtn.append(icon('i-play'));
+
+    const meta = el('div', 'slot__meta');
+    meta.append(el('strong', null, 'Video showcase'), el('span', null, 'Play inline · Watch on YouTube'));
+
+    const playVideo = () => {
+      if (video.classList.contains('is-playing')) return;
+      video.classList.add('is-playing');
+      const iframe = document.createElement('iframe');
+      iframe.className = 'slot__iframe';
+      iframe.src = `https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0`;
+      iframe.title = `${project.title} gameplay showcase`;
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      video.replaceChildren(iframe);
+      iframe.focus();
+    };
+
+    playBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      playVideo();
+    });
+
+    video.addEventListener('click', (e) => {
+      if (e.target.closest('.slot__external')) return;
+      playVideo();
+    });
+
+    video.addEventListener('keydown', (e) => {
+      if ((e.key === 'Enter' || e.key === ' ') && !e.target.closest('.slot__external')) {
+        e.preventDefault();
+        playVideo();
+      }
+    });
+
+    video.tabIndex = 0;
+    video.append(thumb, overlay, extLink, playBtn, meta);
+  } else {
+    video = el('div', 'slot slot--video');
+    video.append(icon('i-play'), el('strong', null, 'Video showcase'), el('span', null, 'Coming soon to YouTube'));
+  }
+
   media.append(preview, video);
 
   const parts = [close, title, quote, grid, el('h3', null, 'Gameplay'), media];
@@ -116,5 +193,8 @@ export function initModal() {
   // A click on the backdrop lands on the dialog element itself
   dialog.addEventListener('click', (event) => {
     if (event.target === dialog) dialog.close();
+  });
+  dialog.addEventListener('close', () => {
+    content.replaceChildren();
   });
 }

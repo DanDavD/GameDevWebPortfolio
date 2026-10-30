@@ -30,9 +30,9 @@ export const projects = [
     links: {
       github: 'https://github.com/DanDavD/Horde-Carnage',
       release: 'https://github.com/DanDavD/Horde-Carnage/releases/tag/v0.1.0',
-      itch: null,
+      itch: 'https://dandavd.itch.io/horde-carnage-demo',
       preview: null,
-      youtube: null,
+      youtube: 'https://youtu.be/Oz9MaF9-lhU?si=sBYQJA1JJ-4oeXbH',
     },
   },
   {

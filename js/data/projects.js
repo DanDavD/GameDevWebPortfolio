@@ -1,7 +1,6 @@
 // Projects shown in "Selected work" and in each project's dialog.
 // To add a link later, replace a `null` with the URL:
-//   itch:    the game's Itch.io page
-//   preview: path to a gameplay clip or GIF, e.g. 'assets/projects/horde-carnage/preview.webm'
+//   itch:    the game's Itch.io page (no button is shown while it is null)
 //   youtube: the YouTube video URL
 export const projects = [
   {
@@ -31,7 +30,6 @@ export const projects = [
       github: 'https://github.com/DanDavD/Horde-Carnage',
       release: 'https://github.com/DanDavD/Horde-Carnage/releases/tag/v0.1.0',
       itch: 'https://dandavd.itch.io/horde-carnage-demo',
-      preview: null,
       youtube: 'https://youtu.be/Oz9MaF9-lhU?si=sBYQJA1JJ-4oeXbH',
     },
   },
@@ -52,7 +50,7 @@ export const projects = [
     summary: [
       'Push-to-talk loudness, calibrated to each microphone (RMS to decibels, attack and release smoothing), drives a hand-written URP shader that lights the cave for up to four players.',
       'A blind monster that hunts by sound: a hearing sensor feeds an Idle, Investigate and Hunt state machine that moves on a NavMesh.',
-      'Client-hosted multiplayer with Fish-Net over LAN and Steam: a server-authoritative monster, relics, altar and match flow, with friends-only Steam lobbies. Proximity voice chat is in progress.',
+      'Client-hosted multiplayer with Fish-Net over LAN and Steam: a server-authoritative monster, relics, altar and match flow, with friends-only Steam lobbies and proximity voice chat.',
       'A shared team noise meter, talking relics with procedural voices, and a catacombs level built from a validated text map.',
       '187 EditMode and 24 PlayMode tests, including a hosted local server and a full win through the portal. Scripted headless Windows build. About 11,800 lines of C#.',
     ],
@@ -79,8 +77,7 @@ export const projects = [
       github: 'https://github.com/DanDavD/EchoGame',
       release: 'https://github.com/DanDavD/EchoGame/releases/tag/v0.1.0',
       itch: null,
-      preview: null,
-      youtube: null,
+      youtube: 'https://youtu.be/14y3lMGHbK8?si=NzlobNAiXhypkKl6',
     },
   },
 ];

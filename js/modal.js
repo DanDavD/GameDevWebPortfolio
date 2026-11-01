@@ -61,7 +61,7 @@ function render(project) {
   }
   const actions = el('div', 'actions');
   actions.append(button(project.links.github, 'View on GitHub', 'i-github', 'solid'));
-  actions.append(button(project.links.itch, project.links.itch ? 'Play on Itch.io' : 'Itch.io page coming soon', 'i-gamepad', 'quiet'));
+  if (project.links.itch) actions.append(button(project.links.itch, 'Play on Itch.io', 'i-gamepad', 'quiet'));
   const left = el('div');
   left.append(stats, actions);
 
@@ -74,21 +74,8 @@ function render(project) {
   const grid = el('div', 'modal__grid');
   grid.append(left, right);
 
-  // Gameplay preview and video
+  // Gameplay video
   const media = el('div', 'media');
-  const preview = el('div', 'slot');
-  if (project.links.preview) {
-    preview.classList.add('slot--filled');
-    const isVideo = /\.(webm|mp4)$/i.test(project.links.preview);
-    const node = isVideo ? el('video') : el('img');
-    node.src = project.links.preview;
-    if (isVideo) Object.assign(node, { muted: true, loop: true, autoplay: true, playsInline: true });
-    else node.alt = `${project.title} gameplay`;
-    preview.append(node);
-  } else {
-    preview.append(icon('i-gamepad'), el('span', null, 'Gameplay preview coming soon'));
-  }
-
   const ytId = getYouTubeId(project.links.youtube);
   let video;
 
@@ -161,7 +148,7 @@ function render(project) {
     video.append(icon('i-play'), el('strong', null, 'Video showcase'), el('span', null, 'Coming soon to YouTube'));
   }
 
-  media.append(preview, video);
+  media.append(video);
 
   const parts = [close, title, quote, grid, el('h3', null, 'Gameplay'), media];
 

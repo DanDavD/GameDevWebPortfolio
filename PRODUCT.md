@@ -31,8 +31,8 @@ Visitors arrive from a CV, LinkedIn or GitHub. They compare candidates quickly, 
 - Projects load from a JavaScript data file and open in a detailed modal.
 - Sections: hero with links, projects, career and education, self-rated skill meters, research placeholder.
 - The site is silent: no audio.
-- Placeholders until the owner supplies them: profile photo, gameplay GIFs, YouTube videos, Itch.io game pages.
-- Echo Protocol proximity voice chat is described as in progress until the repository README says otherwise.
+- Each project modal shows one YouTube gameplay showcase (no GIF slot). The Itch.io button appears only when a game page exists.
+- Echo Protocol proximity voice chat is done (confirmed by Daniel on 2026-11-01).
 
 ## Brand Commitments
 

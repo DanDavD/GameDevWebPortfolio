@@ -52,6 +52,23 @@ function render(project) {
   title.autofocus = true;
   const quote = el('p', 'modal__quote', project.quote);
 
+  // Each project wears its own game: its key art behind the title, and its colour through the page
+  dialog.dataset.project = project.id;
+  const bar = el('div', 'modal__bar');
+  bar.append(close);
+  const banner = el('header', 'modal__banner');
+  if (project.banner) {
+    const art = el('img', 'modal__art');
+    Object.assign(art, { src: project.banner.src, alt: '', width: 1920, height: 1080, decoding: 'async' });
+    art.style.objectPosition = project.banner.position ?? '50% 50%';
+    art.style.setProperty('--zoom', project.banner.zoom ?? 1);
+    art.style.setProperty('--origin', project.banner.origin ?? '50% 50%');
+    banner.append(art);
+  }
+  const heading = el('div', 'modal__heading');
+  heading.append(el('p', 'modal__kicker', project.kicker), title, quote);
+  banner.append(heading);
+
   // Left: the item's stats and where to get it
   const stats = el('dl', 'stats');
   for (const [term, value] of project.stats) {
@@ -62,6 +79,10 @@ function render(project) {
   const actions = el('div', 'actions');
   actions.append(button(project.links.github, 'View on GitHub', 'i-github', 'solid'));
   if (project.links.itch) actions.append(button(project.links.itch, 'Play on Itch.io', 'i-gamepad', 'quiet'));
+  if (project.links.release) {
+    const tag = project.links.release.split('/').pop();
+    actions.append(button(project.links.release, `Release ${tag}`, 'i-download', 'quiet'));
+  }
   const left = el('div');
   left.append(stats, actions);
 
@@ -85,7 +106,8 @@ function render(project) {
     video.setAttribute('aria-label', `${project.title} video showcase`);
 
     const thumb = el('img', 'slot__thumb');
-    thumb.src = `https://img.youtube.com/vi/${ytId}/maxresdefault.jpg`;
+    // A project can show its own still instead of the video's YouTube thumbnail
+    thumb.src = project.links.poster ?? `https://img.youtube.com/vi/${ytId}/maxresdefault.jpg`;
     thumb.alt = `${project.title} gameplay showcase thumbnail`;
     thumb.loading = 'lazy';
     thumb.decoding = 'async';
@@ -150,7 +172,7 @@ function render(project) {
 
   media.append(video);
 
-  const parts = [close, title, quote, grid, el('h3', null, 'Gameplay'), media];
+  const parts = [bar, banner, grid, el('h3', null, 'Gameplay'), media];
 
   if (project.gallery.length) {
     const gallery = el('div', 'gallery');
@@ -183,5 +205,6 @@ export function initModal() {
   });
   dialog.addEventListener('close', () => {
     content.replaceChildren();
+    delete dialog.dataset.project;
   });
 }

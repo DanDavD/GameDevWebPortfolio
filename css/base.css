@@ -83,6 +83,7 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.22e
 .button[aria-disabled='true']:active { transform: none; }
 @media (hover: hover) and (pointer: fine) {
   .button--solid:hover { background: #d8b46c; }
+  .modal .button--solid:hover { background: var(--project-hover); }
   .button--light:hover { background: #fff8ea; }
   .button--quiet:hover { background: #2a2620; }
 }

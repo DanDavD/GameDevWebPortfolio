@@ -30,9 +30,8 @@
 .hero__picture img {
   width: 100%; height: 100%;
   object-fit: cover;
-  /* crop away the game HUD at the top of the screenshot */
-  object-position: 50% 100%;
-  transform-origin: 50% 100%;
+  object-position: 50% 50%;
+  transform-origin: 50% 40%;
   filter: brightness(0.8) contrast(1.06);
   animation: picture-settle 2400ms var(--ease-out) both;
 }
@@ -97,8 +96,8 @@
   to { clip-path: inset(0 0 0 0); }
 }
 @keyframes picture-settle {
-  from { transform: scale(1.3); }
-  to { transform: scale(1.22); }
+  from { transform: scale(1.12); }
+  to { transform: scale(1.04); }
 }
 @keyframes rise {
   from { opacity: 0; transform: translateY(18px); }
@@ -194,11 +193,13 @@ main > section { margin-top: var(--section); }
   max-width: 52ch;
   color: var(--muted);
 }
+.work__item[data-project='horde-carnage'] { --project: #d9583f; }
+.work__item[data-project='echo-protocol'] { --project: #5fd0d6; }
 .work__more {
   display: inline-flex; align-items: center; gap: 0.5rem;
   margin-top: 1.25rem;
   font-weight: 500;
-  color: var(--accent);
+  color: var(--project, var(--accent));
 }
 .work__more .icon { transition: transform var(--quick) var(--ease-out); }
 .work__open:active .work__more .icon { transform: scale(0.9); }
@@ -423,20 +424,100 @@ main > section { margin-top: var(--section); }
   .modal[open]::backdrop { opacity: 0; }
 }
 
-.modal__inner { padding: clamp(1.5rem, 1rem + 2.5vw, 3.5rem); }
+/* Each project brings its own colour: Horde Carnage burns, Echo Protocol glows */
+.modal {
+  --project: var(--accent);
+  --project-ink: var(--accent-ink);
+  --project-line: rgb(201 163 90 / 0.35);
+  --project-tint: var(--raised);
+  background: var(--project-tint);
+  border-top: 3px solid var(--project);
+}
+.modal[data-project='horde-carnage'] {
+  --project: #d9583f;
+  --project-hover: #e8735b;
+  --project-ink: #170806;
+  --project-line: rgb(217 88 63 / 0.4);
+  --project-tint: #19120f;
+}
+.modal[data-project='echo-protocol'] {
+  --project: #5fd0d6;
+  --project-hover: #8be0e4;
+  --project-ink: #061314;
+  --project-line: rgb(95 208 214 / 0.38);
+  --project-tint: #0f1516;
+}
+
+.modal__inner {
+  --pad: clamp(1.5rem, 1rem + 2.5vw, 3.5rem);
+  padding: var(--pad);
+}
+.modal__bar {
+  position: sticky; top: 1rem; z-index: 3;
+  height: 0;
+  display: flex; justify-content: flex-end;
+  margin: calc(1rem - var(--pad)) calc(1rem - var(--pad)) 0 0;
+}
 .modal__close {
-  position: sticky; top: 0; z-index: 2;
-  float: right;
   display: grid; place-items: center;
   width: 2.75rem; height: 2.75rem;
-  margin: -0.75rem -0.75rem 0 1rem;
-  background: var(--raised-2);
+  background: rgb(14 13 11 / 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   transition: transform var(--press) var(--ease-out), background-color var(--quick) ease;
 }
 .modal__close:active { transform: scale(0.94); }
 .modal__close .icon { width: 1.25rem; height: 1.25rem; }
 @media (hover: hover) and (pointer: fine) {
-  .modal__close:hover { background: #2a2620; }
+  .modal__close:hover { background: rgb(42 38 32 / 0.9); }
+}
+
+/* Key art bleeding to the dialog's edges, fading into its colour under the title */
+.modal__banner {
+  position: relative; isolation: isolate;
+  display: flex; align-items: flex-end;
+  min-height: clamp(17rem, 42svh, 26rem);
+  margin: -1rem calc(-1 * var(--pad)) 0;
+  padding: var(--pad);
+  overflow: hidden;
+}
+.modal__art {
+  position: absolute; inset: 0; z-index: -3;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transform: scale(var(--zoom, 1));
+  transform-origin: var(--origin, 50% 50%);
+}
+.modal__banner::after {
+  content: '';
+  position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(180deg, rgb(0 0 0 / 0.25) 0%, transparent 30% 50%, var(--project-tint) 100%),
+    linear-gradient(90deg, var(--project-tint) 0%, transparent 65%);
+}
+.modal__banner::before {
+  content: '';
+  position: absolute; inset: 0; z-index: -2;
+  pointer-events: none;
+}
+/* Horde Carnage: embers rising from under the title */
+.modal[data-project='horde-carnage'] .modal__banner::before {
+  background: radial-gradient(ellipse 70% 60% at 15% 110%, rgb(217 88 63 / 0.4), transparent 70%);
+}
+/* Echo Protocol: sound waves spreading out from the title */
+.modal[data-project='echo-protocol'] .modal__banner::before {
+  background: repeating-radial-gradient(circle at 10% 100%, transparent 0 3.4rem, rgb(95 208 214 / 0.22) 3.45rem 3.55rem);
+  -webkit-mask-image: radial-gradient(circle at 10% 100%, #000 0, transparent 26rem);
+  mask-image: radial-gradient(circle at 10% 100%, #000 0, transparent 26rem);
+}
+.modal__heading { max-width: 36rem; }
+.modal__kicker {
+  margin-bottom: 0.75rem;
+  font-size: var(--step-small);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--project);
 }
 
 .modal__title:focus { outline: none; }
@@ -447,7 +528,7 @@ main > section { margin-top: var(--section); }
   font-style: italic;
   font-size: var(--step-lead);
   line-height: 1.3;
-  color: var(--accent);
+  color: var(--project);
 }
 .modal__grid {
   display: grid;
@@ -471,16 +552,25 @@ main > section { margin-top: var(--section); }
 
 .modal__lede { font-size: var(--step-lead); line-height: 1.45; }
 .modal h3 {
+  display: flex; align-items: center; gap: 1rem;
   font-size: 1.75rem;
   margin: 2rem 0 1rem;
 }
+.modal h3::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--project-line), transparent);
+}
+.modal .button--solid { background: var(--project); color: var(--project-ink); }
+.stats > div { padding-left: 0.875rem; border-left: 1px solid var(--project-line); }
 .summary { display: grid; gap: 0.875rem; }
 .summary li { padding-left: 1.25rem; position: relative; }
 .summary li::before {
   content: '';
   position: absolute; left: 0; top: 0.68em;
   width: 0.375rem; height: 0.375rem;
-  background: var(--accent);
+  background: var(--project);
 }
 
 .media { margin-top: 1rem; }
@@ -513,7 +603,7 @@ main > section { margin-top: var(--section); }
   transition: border-color var(--quick) ease;
 }
 .slot--player:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--project);
   outline-offset: 2px;
 }
 .slot__thumb {
@@ -577,9 +667,9 @@ main > section { margin-top: var(--section); }
   .slot--player:hover .slot__play {
     transform: translate(-50%, -50%) scale(1.1);
     background: #201d19;
-    border-color: var(--accent);
-    color: var(--accent);
-    box-shadow: 0 0 24px rgb(201 163 90 / 0.35);
+    border-color: var(--project);
+    color: var(--project);
+    box-shadow: 0 0 24px var(--project-line);
   }
 }
 .slot__play:active {
@@ -617,8 +707,8 @@ main > section { margin-top: var(--section); }
 @media (hover: hover) and (pointer: fine) {
   .slot__external:hover {
     background: #2a2620;
-    border-color: var(--accent);
-    color: var(--accent);
+    border-color: var(--project);
+    color: var(--project);
     transform: translateY(-1px);
   }
 }
@@ -781,7 +871,7 @@ main > section { margin-top: var(--section); }
   .hero__picture, .hero__picture img, .hero__role, .hero__lede, .links, .hero__name {
     animation-name: fade;
   }
-  .hero__picture img { transform: scale(1.22); }
+  .hero__picture img { transform: scale(1.04); }
   .hero__name-inner { animation: none !important; }
   .reveal-ready [data-reveal] .r { transform: none; }
   .reveal-ready .skill-group .meter__fill { transition: opacity 400ms ease; transform: scaleX(var(--v)); opacity: 0; }

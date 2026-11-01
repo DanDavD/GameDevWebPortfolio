@@ -37,10 +37,11 @@ function renderWork() {
 
   projects.forEach((project, index) => {
     const item = el('li', 'work__item r');
+    item.dataset.project = project.id;
     item.style.setProperty('--i', index + 1);
 
     const media = el('div', 'work__media');
-    media.append(cover(project, { wide: true }));
+    media.append(cover(project));
 
     const open = el('button', 'work__open');
     open.type = 'button';

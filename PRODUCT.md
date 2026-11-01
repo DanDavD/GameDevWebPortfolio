@@ -42,7 +42,7 @@ Visitors arrive from a CV, LinkedIn or GitHub. They compare candidates quickly, 
 
 ## Evidence on Hand
 
-- CV (Oct 2026), GitHub READMEs and v0.1.0 releases of both games.
+- CV (Oct 2026), GitHub READMEs, Horde Carnage v1.0.0 and Echo Protocol v0.2.0 releases.
 - Echo Protocol screenshots from its repository (`assets/projects/echo-protocol/`).
 - No Horde Carnage screenshots yet: its cover is drawn in code from the Hair Ring attack.
 - Never invent testimonials, employers, players, press or numbers.

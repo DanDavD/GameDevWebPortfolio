@@ -30,6 +30,7 @@
   --accent: #c9a35a;
   --accent-ink: #14110c;
   --blood: #8e1b17;
+  --hairline: rgb(230 224 210 / 0.12);
 
   /* Type */
   --display: 'Cormorant Garamond', 'Iowan Old Style', 'Palatino Linotype', Palatino, serif;

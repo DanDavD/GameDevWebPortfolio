@@ -5,22 +5,24 @@ Everything the site still needs. Placeholders are visible on the page on purpose
 
 ## Koara (filled in from both repos, Daniel's PRs and his answers)
 
-- [ ] Client's answer: OK to use the name "Koara" and to say it is in production?
-      If not, rename to "a cosmetics retailer in Honduras".
-- [ ] Record the ~2 min video demo with sample data; add it as `links.youtube`,
-      then remove `videoSoon` and change the `note` to say the video uses sample data.
+- [x] Client agreed: the name "Koara" and "in production" can be used.
+- [x] Video demo with sample data (youtube.com/watch?v=mAXlnCBnFM8).
+- [x] Screenshots: product editor (desktop preview), sales overview (phone cover,
+      banner), inventory and frequent shoppers (gallery).
 - [ ] Only if the client actually asked: say "no public demo at the client's request".
-- [ ] Screenshots or a short loop of the inventory and reports screens (cover, banner, gallery).
-- [ ] Confirm the backend host wording: "an Oracle server" (Oracle Cloud?).
+- [x] Backend host confirmed: an Oracle server.
 - [ ] Optional: a separate demo deployment with fake data → `links.demo` + `credentials`.
 
 ## Universal AI Sync (filled in from its README, repo and links)
 
 - [ ] Approve the deadpan line: "Explaining it once was already too many times."
-- [ ] Cover is the YouTube thumbnail (file sync into Claude). Replace with a cleaner
-      screenshot or a short loop of the popup if one exists.
-- [ ] Gallery: no screenshots yet (the README's `docs/screenshots/` folder does not exist).
-- [ ] Optional: a colour of its own for its dialog (currently the site's gold).
+- [ ] Optional: the phone cover is still the YouTube thumbnail (file sync into Claude);
+      a cleaner 16:10 screenshot would look better there.
+- [x] Gallery: three Chrome Web Store images (popup, before/after, switch), captioned as listing artwork.
+      Left out on purpose: "7-day free trial" and "No servers / no storage", which contradict
+      the README (Pro plan not connected, licensing backend offline).
+- [x] Real screenshot of the popup → desktop preview and first gallery image.
+- [x] Colour of its own: blue-violet (#8f8cff).
 - [ ] Note for the repo, not the site: the README still links `youtu.be/VIDEO_ID`.
 
 ## Movie Ticket Booking System (filled in from both repos and Daniel's PRs)

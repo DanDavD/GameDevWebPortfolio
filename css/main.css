@@ -273,6 +273,8 @@ main > section { margin-top: var(--section); }
 }
 .work__item[data-project='horde-carnage'] { --project: #d9583f; }
 .work__item[data-project='echo-protocol'] { --project: #5fd0d6; }
+.work__item[data-project='universal-ai-sync'] { --project: #8f8cff; }
+.work__item[data-project='koara'] { --project: #f0a6c6; }
 .work__more {
   display: inline-flex; align-items: center; gap: 0.5rem;
   margin-top: 1.25rem;
@@ -389,6 +391,7 @@ main > section { margin-top: var(--section); }
 .work__frame > .is-active { opacity: 1; }
 
 .cover { width: 100%; height: 100%; overflow: hidden; background: var(--raised); }
+.cover picture { display: contents; }
 .cover img, .cover video {
   display: block;
   width: 100%; height: 100%;
@@ -623,6 +626,22 @@ main > section { margin-top: var(--section); }
   --project-line: rgb(95 208 214 / 0.38);
   --project-tint: #0f1516;
 }
+/* Universal AI Sync: blue turning violet, one chat handing over to the next */
+.modal[data-project='universal-ai-sync'] {
+  --project: #8f8cff;
+  --project-hover: #aba9ff;
+  --project-ink: #0b0a1f;
+  --project-line: rgb(143 140 255 / 0.38);
+  --project-tint: #121220;
+}
+/* Koara: the store's rose, deepened so it stays calm on a dark page */
+.modal[data-project='koara'] {
+  --project: #f0a6c6;
+  --project-hover: #f6c1d8;
+  --project-ink: #1c0b13;
+  --project-line: rgb(240 166 198 / 0.36);
+  --project-tint: #1a1216;
+}
 
 .modal__inner {
   --pad: clamp(1.5rem, 1rem + 2.5vw, 3.5rem);
@@ -679,6 +698,16 @@ main > section { margin-top: var(--section); }
 /* Horde Carnage: embers rising from under the title */
 .modal[data-project='horde-carnage'] .modal__banner::before {
   background: radial-gradient(ellipse 70% 60% at 15% 110%, rgb(217 88 63 / 0.4), transparent 70%);
+}
+/* Universal AI Sync: two glows, blue into violet, as a conversation moves across */
+.modal[data-project='universal-ai-sync'] .modal__banner::before {
+  background:
+    radial-gradient(ellipse 45% 55% at 8% 105%, rgb(96 140 255 / 0.32), transparent 70%),
+    radial-gradient(ellipse 45% 55% at 34% 105%, rgb(160 120 255 / 0.28), transparent 70%);
+}
+/* Koara: a soft blush under the title */
+.modal[data-project='koara'] .modal__banner::before {
+  background: radial-gradient(ellipse 65% 60% at 12% 108%, rgb(240 166 198 / 0.3), transparent 70%);
 }
 /* Echo Protocol: sound waves spreading out from the title */
 .modal[data-project='echo-protocol'] .modal__banner::before {
@@ -950,6 +979,8 @@ main > section { margin-top: var(--section); }
 
 .gallery { display: grid; gap: 1.5rem; margin-top: 1.5rem; }
 .gallery figure img { width: 100%; }
+.gallery figure.gallery__natural img { max-width: 100%; margin-inline: auto; }
+.gallery figure.gallery__natural figcaption { text-align: center; }
 .gallery figcaption { margin-top: 0.5rem; font-size: var(--step-small); color: var(--muted); }
 
 /* ---------- Omen: YOU DIED and BONFIRE LIT ---------- */

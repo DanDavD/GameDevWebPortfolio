@@ -50,54 +50,94 @@ function render(project) {
   title.id = 'modal-title';
   title.tabIndex = -1;
   title.autofocus = true;
-  const quote = el('p', 'modal__quote', project.quote);
 
   // Each project wears its own game: its key art behind the title, and its colour through the page
   dialog.dataset.project = project.id;
   const bar = el('div', 'modal__bar');
   bar.append(close);
   const banner = el('header', 'modal__banner');
+  if (!project.banner) banner.classList.add('modal__banner--plain');
   if (project.banner) {
     const art = el('img', 'modal__art');
     Object.assign(art, { src: project.banner.src, alt: '', width: 1920, height: 1080, decoding: 'async' });
     art.style.objectPosition = project.banner.position ?? '50% 50%';
     art.style.setProperty('--zoom', project.banner.zoom ?? 1);
     art.style.setProperty('--origin', project.banner.origin ?? '50% 50%');
+    // Busy screenshots (text, UI) can be dimmed so the title stays readable
+    if (project.banner.dim) art.style.filter = `brightness(${project.banner.dim}) blur(2px)`;
     banner.append(art);
   }
   const heading = el('div', 'modal__heading');
-  heading.append(el('p', 'modal__kicker', project.kicker), title, quote);
+  if (project.kicker) heading.append(el('p', 'modal__kicker', project.kicker));
+  heading.append(title);
+  if (project.quote) heading.append(el('p', 'modal__quote', project.quote));
   banner.append(heading);
 
   // Left: the item's stats and where to get it
   const stats = el('dl', 'stats');
-  for (const [term, value] of project.stats) {
+  const rows = [
+    ['Role', project.role],
+    ['Context', project.context],
+    ...(project.stats ?? []),
+  ].filter(([, value]) => value);
+  for (const [term, value] of rows) {
     const pair = el('div');
     pair.append(el('dt', null, term), el('dd', null, value));
     stats.append(pair);
   }
-  const actions = el('div', 'actions');
-  actions.append(button(project.links.github, 'View on GitHub', 'i-github', 'solid'));
-  if (project.links.itch) actions.append(button(project.links.itch, 'Play on Itch.io', 'i-gamepad', 'quiet'));
-  if (project.links.release) {
-    const tag = project.links.release.split('/').pop();
-    actions.append(button(project.links.release, `Release ${tag}`, 'i-download', 'quiet'));
-  }
+  // The first link a project has is the solid one; the rest are quiet
+  const links = project.links ?? {};
+  const wanted = [
+    [links.play, 'Play in the browser', 'i-play'],
+    [links.demo, 'Live demo', 'i-external'],
+    [links.store, 'Get it on the Chrome Web Store', 'i-store'],
+    [links.github, 'View on GitHub', 'i-github'],
+    ...(links.repos ?? []).map((repo) => [repo.href, repo.label, 'i-github']),
+    [links.site, 'Website', 'i-external'],
+    [links.itch, 'Play on Itch.io', 'i-gamepad'],
+    [links.release, links.release ? `Release ${links.release.split('/').pop()}` : '', 'i-download'],
+    [links.roadmap, /trello\.com/i.test(links.roadmap ?? '') ? 'Roadmap on Trello' : 'Roadmap', 'i-board'],
+  ].filter(([href]) => href);
   const left = el('div');
-  left.append(stats, actions);
+  left.append(stats);
+  if (wanted.length) {
+    const actions = el('div', 'actions');
+    wanted.forEach(([href, label, iconId], i) => actions.append(button(href, label, iconId, i === 0 ? 'solid' : 'quiet')));
+    left.append(actions);
+  }
+  if (project.note) left.append(el('p', 'actions__note', project.note));
+
+  // Demo credentials, for apps behind a login
+  if (project.credentials) {
+    const box = el('div', 'credentials');
+    const head = el('p', 'credentials__title');
+    head.append(icon('i-key'), document.createTextNode('Demo credentials'));
+    const list = el('dl');
+    for (const [term, value] of Object.entries(project.credentials)) {
+      const pair = el('div');
+      pair.append(el('dt', null, term), el('dd', null, value));
+      list.append(pair);
+    }
+    box.append(head, list);
+    left.append(box);
+  }
 
   // Right: what it is and what I built
-  const summary = el('ul', 'summary');
-  for (const line of project.summary) summary.append(el('li', null, line));
   const right = el('div');
-  right.append(el('p', 'modal__lede', project.lede), el('h3', null, 'What I built'), summary);
+  if (project.lede) right.append(el('p', 'modal__lede', project.lede));
+  if (project.summary?.length) {
+    const summary = el('ul', 'summary');
+    for (const line of project.summary) summary.append(el('li', null, line));
+    right.append(el('h3', null, 'What I built'), summary);
+  }
 
   const grid = el('div', 'modal__grid');
   grid.append(left, right);
 
   // Gameplay video
   const media = el('div', 'media');
-  const ytId = getYouTubeId(project.links.youtube);
+  const isGame = project.track !== 'software';
+  const ytId = getYouTubeId(links.youtube);
   let video;
 
   if (ytId) {
@@ -131,7 +171,7 @@ function render(project) {
     playBtn.append(icon('i-play'));
 
     const meta = el('div', 'slot__meta');
-    meta.append(el('strong', null, 'Video showcase'), el('span', null, 'Play inline · Watch on YouTube'));
+    meta.append(el('strong', null, isGame ? 'Video showcase' : 'Video demo'), el('span', null, 'Play inline · Watch on YouTube'));
 
     const playVideo = () => {
       if (video.classList.contains('is-playing')) return;
@@ -165,16 +205,24 @@ function render(project) {
 
     video.tabIndex = 0;
     video.append(thumb, overlay, extLink, playBtn, meta);
-  } else {
+  } else if (project.videoSoon) {
+    video = el('div', 'slot slot--video');
+    video.append(icon('i-play'), el('strong', null, isGame ? 'Video showcase' : 'Video demo'), el('span', null, 'Coming soon to YouTube'));
+  } else if (project.pending) {
+    video = el('div', 'slot slot--video');
+    video.append(icon('i-play'), el('strong', null, isGame ? 'Video showcase' : 'Video demo'), el('span', null, 'Pending: video link'));
+  } else if (isGame) {
     video = el('div', 'slot slot--video');
     video.append(icon('i-play'), el('strong', null, 'Video showcase'), el('span', null, 'Coming soon to YouTube'));
   }
 
-  media.append(video);
+  const parts = [bar, banner, grid];
+  if (video) {
+    media.append(video);
+    parts.push(el('h3', null, isGame ? 'Gameplay' : 'Demo'), media);
+  }
 
-  const parts = [bar, banner, grid, el('h3', null, 'Gameplay'), media];
-
-  if (project.gallery.length) {
+  if (project.gallery?.length) {
     const gallery = el('div', 'gallery');
     for (const shot of project.gallery) {
       const figure = el('figure');

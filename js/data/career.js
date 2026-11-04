@@ -9,7 +9,7 @@ export const career = [
   },
   {
     institution: 'Koara, client project through UNITEC',
-    credential: 'Full-stack developer, team of five',
+    credential: 'Full-stack developer, team of four',
     field: 'Invoicing and inventory system',
     start: 'May 2026',
     end: 'Jul 2026',

@@ -24,6 +24,9 @@
 //   youtube: the YouTube video URL
 //   poster:  optional still shown before the video plays, instead of YouTube's thumbnail
 //
+// Gallery shots are shown full width; give `width` and `height` for a small or tall
+// picture (a popup, a phone screen) and it keeps its own size instead of stretching.
+//
 // Cover and banner `src` can be a picture (.jpg, .png, .webp, .gif) or a short muted
 // loop (.mp4, .webm), which is much lighter than a GIF.
 
@@ -164,18 +167,38 @@ export const projects = [
       '23 merged pull requests across the two repositories.',
     ],
     kicker: 'Invoicing and inventory web app · Next.js and NestJS',
-    note: 'There is no public demo: the system runs on the client’s real data. A video demo with sample data is on its way.',
-    videoSoon: true,
-    cover: null,
-    banner: null,
-    gallery: [],
+    note: 'There is no public demo: the system runs on the client’s real data. The video was recorded locally with sample data.',
+    cover: {
+      src: 'assets/projects/koara/cover.jpg',
+      portrait: 'assets/projects/koara/cover-portrait.jpg',
+      // One alt for both crops: the product editor (desktop) and the sales overview (phones)
+      alt: 'Koara screens: the product editor and the sales overview report',
+    },
+    banner: { src: 'assets/projects/koara/sales-overview.jpg', position: '50% 30%', dim: 0.4 },
+    gallery: [
+      {
+        src: 'assets/projects/koara/sales-overview.jpg',
+        alt: 'Koara sales overview report: invoices issued, sales before and after tax, unique customers and averages for a date range',
+        caption: 'Sales overview: totals, taxes and averages for any date range, exportable to PDF. Sample data.',
+      },
+      {
+        src: 'assets/projects/koara/inventory.jpg',
+        alt: 'Koara inventory screen with product cards showing code, name, stock, price and edit, delete and add-to-cart buttons',
+        caption: 'The inventory screen: products with stock, price and an out-of-stock state. Sample data.',
+      },
+      {
+        src: 'assets/projects/koara/frequent-shoppers.jpg',
+        alt: 'Koara frequent shoppers report listing customers with their number of purchases, last purchase date and total spent',
+        caption: 'Frequent shoppers: purchases, last visit and total spent per customer. Sample data.',
+      },
+    ],
     links: {
       repos: [
         { label: 'Frontend code', href: 'https://github.com/AzaliaFlores19/koara_frontend' },
         { label: 'Backend code', href: 'https://github.com/AzaliaFlores19/Koara_backend' },
       ],
       roadmap: 'https://trello.com/b/54Niiogu/proyecto-koara',
-      youtube: null,
+      youtube: 'https://www.youtube.com/watch?v=mAXlnCBnFM8',
     },
   },
   {
@@ -205,10 +228,35 @@ export const projects = [
     kicker: 'Chrome extension · JavaScript and Node.js',
     cover: {
       src: 'assets/projects/universal-ai-sync/cover.jpg',
-      alt: 'Universal AI Sync uploading a conversation exported from Gemini as a Markdown file into a Claude chat',
+      portrait: 'assets/projects/universal-ai-sync/popup-portrait.jpg',
+      // One alt for both crops: the popup (desktop) and file sync into Claude (phones)
+      alt: 'Universal AI Sync: the extension popup, and a conversation exported from Gemini arriving in Claude as a Markdown file',
     },
     banner: { src: 'assets/projects/universal-ai-sync/cover.jpg', position: '50% 40%', dim: 0.45 },
-    gallery: [],
+    gallery: [
+      {
+        src: 'assets/projects/universal-ai-sync/popup.jpg',
+        width: 400,
+        height: 548,
+        alt: 'The Universal AI Sync popup with Claude, ChatGPT and Gemini tabs detected, Claude as source and Gemini as destination',
+        caption: 'The popup as it runs: it finds the open AI tabs, then you choose a source, a destination and a sync mode.',
+      },
+      {
+        src: 'assets/projects/universal-ai-sync/store-popup.jpg',
+        alt: 'The Universal AI Sync popup listing open ChatGPT and Claude tabs as source and destination, with text-based and file-based sync buttons',
+        caption: 'The popup: pick a source and a destination tab, then sync by text or by file. Chrome Web Store listing artwork.',
+      },
+      {
+        src: 'assets/projects/universal-ai-sync/store-before-after.jpg',
+        alt: 'Comparison of copying a conversation by hand between AI chats versus moving it with Universal AI Sync',
+        caption: 'The problem it solves: copying, pasting and explaining everything again. Chrome Web Store listing artwork.',
+      },
+      {
+        src: 'assets/projects/universal-ai-sync/store-switch.jpg',
+        alt: 'A conversation shown in ChatGPT and the same conversation continued in Claude',
+        caption: 'One conversation, carried from ChatGPT to Claude. Chrome Web Store listing artwork.',
+      },
+    ],
     links: {
       github: 'https://github.com/DanDavD/Universal-AI-Sync',
       store: 'https://chromewebstore.google.com/detail/universal-ai-sync/hnfdhhaignnapkpkkhjocckiklgedaln',

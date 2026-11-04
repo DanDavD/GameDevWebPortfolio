@@ -1,5 +1,7 @@
 // Cover art for the work list: each project's key frame, zoomed and framed from its data.
 // A cover can be a picture or a short muted loop; with no cover, a visible "pending" frame.
+// `cover.portrait` is an optional 4:5 picture for the tall preview frame on desktop;
+// phones (and anything without it) use `cover.src`.
 const isVideo = (src) => /\.(mp4|webm)$/i.test(src);
 
 export function cover(project) {
@@ -32,6 +34,18 @@ export function cover(project) {
   }
   media.style.setProperty('--zoom', project.cover.zoom ?? 1);
   media.style.setProperty('--origin', project.cover.origin ?? '50% 50%');
+
+  if (project.cover.portrait && media.tagName === 'IMG') {
+    // Same breakpoint as the CSS: above 960px the cover sits in the tall preview frame
+    const picture = document.createElement('picture');
+    const tall = document.createElement('source');
+    tall.media = '(min-width: 961px)';
+    tall.srcset = project.cover.portrait;
+    picture.append(tall, media);
+    box.append(picture);
+    return box;
+  }
+
   box.append(media);
   return box;
 }

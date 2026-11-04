@@ -227,7 +227,12 @@ function render(project) {
     for (const shot of project.gallery) {
       const figure = el('figure');
       const img = el('img');
-      Object.assign(img, { src: shot.src, alt: shot.alt, width: 1280, height: 720, loading: 'lazy', decoding: 'async' });
+      Object.assign(img, { src: shot.src, alt: shot.alt, width: shot.width ?? 1280, height: shot.height ?? 720, loading: 'lazy', decoding: 'async' });
+      // Small or tall shots keep their own size instead of being stretched to the dialog's width
+      if (shot.width) {
+        figure.classList.add('gallery__natural');
+        img.style.width = `${shot.width}px`;
+      }
       figure.append(img, el('figcaption', null, shot.caption));
       gallery.append(figure);
     }

@@ -104,8 +104,12 @@ function renderTrack(panel, list) {
       if (!href) continue;
       const link = el('a', 'work__link');
       link.href = href;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
+      if (href === '#') {
+        link.addEventListener('click', (event) => event.preventDefault());
+      } else {
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+      }
       link.setAttribute('aria-label', `${label}: ${project.title} (opens in a new tab)`);
       link.append(icon(iconId), document.createTextNode(label));
       link.addEventListener('focus', () => setActive(index));

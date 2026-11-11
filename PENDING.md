@@ -41,10 +41,11 @@ Everything the site still needs. Placeholders are visible on the page on purpose
 
 ## Games tab
 
+- [ ] GodBoard: Itch.io / browser-playable URL (`links.itch`, `links.play`), GitHub release tag (`links.release`) and YouTube video showcase (`links.youtube`, then drop `videoSoon`).
 - [ ] Horde Carnage: is there a version playable in the browser (the Emscripten build)?
       If so, add its URL as `links.play` to show the "Play" button.
 - [ ] Echo Protocol: Itch.io page (`links.itch`) when it exists.
-- [ ] Confirm "Personal project · Solo" is the right context for both games.
+- [ ] Confirm "Personal project · Solo" is the right context for Horde Carnage and Echo Protocol.
 
 ## Site-wide
 

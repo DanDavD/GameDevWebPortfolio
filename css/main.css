@@ -271,6 +271,7 @@ main > section { margin-top: var(--section); }
   max-width: 52ch;
   color: var(--muted);
 }
+.work__item[data-project='godboard'] { --project: #e8a838; }
 .work__item[data-project='horde-carnage'] { --project: #d9583f; }
 .work__item[data-project='echo-protocol'] { --project: #5fd0d6; }
 .work__item[data-project='universal-ai-sync'] { --project: #8f8cff; }
@@ -612,6 +613,14 @@ main > section { margin-top: var(--section); }
   background: var(--project-tint);
   border-top: 3px solid var(--project);
 }
+/* GodBoard: solar amber and parchment warmth for the pantheon die */
+.modal[data-project='godboard'] {
+  --project: #e8a838;
+  --project-hover: #f2be5c;
+  --project-ink: #171003;
+  --project-line: rgb(232 168 56 / 0.38);
+  --project-tint: #18140d;
+}
 .modal[data-project='horde-carnage'] {
   --project: #d9583f;
   --project-hover: #e8735b;
@@ -694,6 +703,12 @@ main > section { margin-top: var(--section); }
   content: '';
   position: absolute; inset: 0; z-index: -2;
   pointer-events: none;
+}
+/* GodBoard: Ra's sun gold meeting Zeus's sky blue across the altar */
+.modal[data-project='godboard'] .modal__banner::before {
+  background:
+    radial-gradient(ellipse 55% 60% at 12% 108%, rgb(232 168 56 / 0.36), transparent 70%),
+    radial-gradient(ellipse 45% 50% at 40% 108%, rgb(86 180 233 / 0.22), transparent 70%);
 }
 /* Horde Carnage: embers rising from under the title */
 .modal[data-project='horde-carnage'] .modal__banner::before {

@@ -22,7 +22,9 @@ const button = (href, label, iconId, variant = 'solid') => {
   const link = el(href ? 'a' : 'span', `button button--${variant}`);
   if (href) {
     link.href = href;
-    if (/^https?:\/\//i.test(href)) {
+    if (href === '#') {
+      link.addEventListener('click', (event) => event.preventDefault());
+    } else if (/^https?:\/\//i.test(href)) {
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
     }

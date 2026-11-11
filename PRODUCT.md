@@ -20,7 +20,7 @@ A portfolio that gets Daniel an interview as a generalist game developer and C++
 
 ## Positioning
 
-Two original, solo-built games whose engineering is shown in the open: a C++20 boss fight on raylib with its own loop, AI and synthesized sound, and a Unity 6 co-op horror game driven by the player's voice. Both ship with automated tests, CI and tagged releases.
+Three original, solo-built games whose engineering is shown in the open: a Unity 6 digital board game of conquest with an engine-free C# core balanced via headless simulations, a C++20 boss fight on raylib with its own loop, AI and synthesized sound, and a Unity 6 co-op horror game driven by the player's voice. All three ship with automated tests and clean architecture.
 
 ## Operating Context
 
@@ -42,9 +42,10 @@ Visitors arrive from a CV, LinkedIn or GitHub. They compare candidates quickly, 
 
 ## Evidence on Hand
 
-- CV (Oct 2026), GitHub READMEs, Horde Carnage v1.0.0 and Echo Protocol v0.2.0 releases.
+- CV (Oct 2026), GitHub READMEs, GodBoard (Official 2026 Unity Game Jam), Horde Carnage v1.0.0 and Echo Protocol v0.2.0 releases.
+- GodBoard screenshots from its repository (`assets/projects/godboard/`).
 - Echo Protocol screenshots from its repository (`assets/projects/echo-protocol/`).
-- No Horde Carnage screenshots yet: its cover is drawn in code from the Hair Ring attack.
+- Horde Carnage gameplay screenshots (`assets/projects/horde-carnage/`).
 - Never invent testimonials, employers, players, press or numbers.
 
 ## Product Principles

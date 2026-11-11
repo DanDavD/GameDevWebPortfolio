@@ -36,6 +36,74 @@ const pending = (what) => `Pending: ${what}`;
 
 export const projects = [
   {
+    id: 'godboard',
+    track: 'games',
+    title: 'GodBoard',
+    quote: 'Your fortune is another’s misfortune.',
+    role: 'Game and systems programmer',
+    context: 'Official 2026 Unity Game Jam · 1-week deadline · Solo',
+    year: '2026',
+    stack: ['Unity 6', 'C#', 'UI Toolkit', 'URP 2D', 'WebGL'],
+    stats: [
+      ['Dates', 'November 5 to November 12, 2026 (full 1-week deadline)'],
+      ['Event', 'Official 2026 Unity Game Jam · Theme: “Lucky Number”'],
+      ['Category', 'Digital board game of conquest, 1 to 4 players (solo vs bots or hot-seat)'],
+      ['Engine', 'Unity 6, URP 2D, UI Toolkit'],
+      ['Language', 'C# (engine-free core and AI), UXML, USS'],
+      ['Core dynamic', 'The die is the pantheon: opposite faces sum to 7, so your sacred number is your rival’s curse'],
+    ],
+    lede: 'Built solo in one week (November 5 to 12, 2026) for the Official 2026 Unity Game Jam. Four ancient gods race for three temples on an altar-shaped parchment board where one six-sided die is the pantheon: opposite faces always add up to 7, so your lucky number is your rival’s curse.',
+    summary: [
+      'All game rules and bot AI live in plain C# assemblies with no UnityEngine references, driven by C# events, an explicit turn state machine and an injectable IRandom so matches run deterministically.',
+      'Every roll—the round’s Destiny Die, the opening turn-order duels, combat and Offerings—reads as sacred, cursed or neutral for each god, feeding Favor (0–3 stars) to unleash each god’s Wrath (Thunderbolt, Mjölnir, Eye of Ra, Harvest), the Day of the God and the Sacred Road army march.',
+      'Bots written against the pure C# core and balanced through headless bot-vs-bot simulations, with 2,000-match runs keeping all four gods between 21.9% and 27.5% win rate across both Pantheon Powers and Classic modes.',
+      'Screen-space HUD built in UI Toolkit (UXML and USS design tokens) over a 2D altar board with procedural parchment and mitered wood textures, colorblind-safe Okabe-Ito nation palettes paired with icons, and WebGL audio mixed with baked echo tails.',
+      '348 EditMode unit tests across 25 test suites covering combat, turn order, Destiny, Offerings, god powers, Sacred Road, hot-seat and bot decisions. About 11,100 lines of C# plus 5,000 of tests.',
+    ],
+    kicker: 'Digital board game of conquest · Unity 6',
+    videoSoon: true,
+    cover: {
+      src: 'assets/projects/godboard/board-road.jpg',
+      portrait: 'assets/projects/godboard/cover-portrait.jpg',
+      alt: 'GodBoard: the altar-shaped parchment board during Zeus’s turn with Sacred Road rings, Thunderbolt ready to unleash, and a sacred 1 beating a neutral 4',
+    },
+    banner: {
+      src: 'assets/projects/godboard/board-road.jpg',
+      position: '50% 45%',
+      dim: 0.42,
+    },
+    gallery: [
+      {
+        src: 'assets/projects/godboard/board-road.jpg',
+        alt: 'GodBoard match on the parchment altar board: Zeus’s Sacred Road rings lit, Thunderbolt ready with three Favor stars, and the combat panel showing Sacred Beats Neutral',
+        caption: 'Sacred Road and Wrath: rolling Zeus’s sacred 1 wins the combat, fills his third Favor star to ready Thunderbolt, and opens a road to march an army across friendly lands.',
+      },
+      {
+        src: 'assets/projects/godboard/menu-pantheon.jpg',
+        alt: 'GodBoard main menu showing Pantheon Powers and Classic toggles, Solo and Hot-Seat modes, and the four god cards for Zeus, Ra, Thor and Morrígan',
+        caption: 'The pantheon menu: four gods on opposite faces of the d6 (1 Zeus vs 6 Thor, 2 Ra vs 5 Morrígan), playable with Pantheon Powers or Classic rules, solo against bots or in 4-player hot-seat.',
+      },
+      {
+        src: 'assets/projects/godboard/day-of-ra.jpg',
+        alt: 'GodBoard board at the start of Ra’s turn during the Day of Ra, with +1 troop added to every Ra territory',
+        caption: 'Day of Ra: when the Destiny Die rolls 2, Sun at Noon adds +1 troop to every Ra territory while rival Morrígan loses 2 reinforcements.',
+      },
+      {
+        src: 'assets/projects/godboard/turn-order.jpg',
+        alt: 'GodBoard turn-order draw modal showing Zeus rolling 4 and Thor rolling 5 in a neutral duel',
+        caption: 'Turn-order draw: rivals duel with the same sacred, cursed and neutral die rules before Round 1 begins.',
+      },
+    ],
+    links: {
+      play: null,
+      github: 'https://github.com/DanDavD/UnityGameJam',
+      itch: '#',
+      roadmap: 'https://trello.com/b/NE6zNufB/godboard-game-jam',
+      release: null,
+      youtube: '#',
+    },
+  },
+  {
     id: 'horde-carnage',
     track: 'games',
     title: 'Horde Carnage',

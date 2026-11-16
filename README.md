@@ -18,7 +18,7 @@ Invoicing and inventory management platform for a Honduran cosmetics and skincar
 - **Stack:** Next.js 16, TypeScript, NestJS 11, Prisma 7, PostgreSQL, Cloudflare R2
 - **Key Details:** Real-time inventory tracking, sales analytics, and tax authority (SAR) CAI billing compliance.
 - **Role:** Full-stack developer in a team of 4 (23 merged PRs).
-- **Links:** [Frontend Code](https://github.com/AzaliaFlores19/koara_frontend) | [Backend Code](https://github.com/AzaliaFlores19/Koara_backend) | [Video Demo](https://www.youtube.com/watch?v=mAXlnCBnFM8)
+- **Links:** [Frontend Code](https://github.com/AzaliaFlores19/koara_frontend) | [Backend Code](https://github.com/AzaliaFlores19/Koara_backend) | [Video Demo](https://www.youtube.com/watch?v=mAXlnCBnFM8) | [Trello](https://trello.com/b/54Niiogu/proyecto-koara)
 
 ### LaColada Honduras
 Production web platform for a modern self-service laundromat franchise with two active physical branches.
@@ -32,7 +32,7 @@ Web-based property management system for an apartment rental business in daily o
 - **Stack:** React 18, Vite, Node.js, Express 5, Sequelize, PostgreSQL, Docker Compose
 - **Key Details:** Role-based dashboards for tenants and admins, lease tracking, payment receipts, and maintenance tickets.
 - **Role:** Full-stack developer in a team of 3 (28 merged PRs).
-- **Link:** [EdificiosSandro Repository](https://github.com/Rpaz17/EdificiosSandro/tree/develop)
+- **Link:** [EdificiosSandro Repository](https://github.com/Rpaz17/EdificiosSandro/tree/develop) | [Trello](https://trello.com/b/2uon1RFQ/edificios-sandro)
 
 ### MobiRent
 Interactive rental marketplace prototype for furniture and appliances built for an investor pitch.
@@ -52,7 +52,7 @@ Local AI engineering desktop workbench and native macOS app designed to direct m
 - **Stack:** Python 3.11, FastAPI, Next.js 14, TypeScript, SQLite, Swift / WKWebView
 - **Key Details:** 5-agent pipeline (Architect, Code Maker, Reviewer, UI Maker/Reviewer), in-composer prompt enhancer, and direct-to-disk diff patching.
 - **Optimization:** Workspace scanner filters build files, reducing prompt token costs by 63% to 98%.
-- **Link:** [Repository](https://github.com/DanDavD/hermes-agent-suite)
+- **Link:** [Repository](https://github.com/DanDavD/hermes-agent-suite) | [Trello](https://trello.com/b/vDr1joge/hermes-studio-v2-product-dev-ai-engineering-nov-12-14)
 
 ### Universal AI Sync
 Published Chrome extension enabling seamless conversation context transfer across AI platforms.
@@ -79,14 +79,14 @@ Digital strategy board game of territorial conquest (1 human player vs 3 AI bots
 - **Stack:** Unity 6, C#, UI Toolkit (UXML/USS), URP 2D
 - **Key Details:** Pure C# engine-free core and bot AI decoupled from UnityEngine; balanced through 2,000 automated bot matches.
 - **Testing:** 348 EditMode unit tests across 25 suites (11,486 lines C# + 4,905 lines tests).
-- **Links:** [Repository](https://github.com/DanDavD/UnityGameJam) | [Game Jam Entry](https://itch.io/jam/official-unity-game-jam-2026/rate/5357436)
+- **Links:** [Repository](https://github.com/DanDavD/UnityGameJam) | [Game Jam Entry](https://itch.io/jam/official-unity-game-jam-2026/rate/5357436) | [Trello](https://trello.com/b/NE6zNufB/godboard-game-jam)
 
 ### Horde Carnage
 Top-down arena boss fight built on a custom C++ engine over raylib 5.5.
 - **Stack:** C++20, raylib 5.5, CMake, Emscripten, GitHub Actions
 - **Key Details:** Fixed 60 Hz simulation, zero runtime heap allocations during combat (contiguous object pools), and deterministic PCG32 replays.
 - **Testing:** 446 automated tests (14,359 assertions) on a headless core library with zero compiler warnings.
-- **Links:** [Repository](https://github.com/DanDavD/Horde-Carnage) | [Play in Browser](https://dandavd.itch.io/horde-carnage-demo)
+- **Links:** [Repository](https://github.com/DanDavD/Horde-Carnage) | [Play in Browser](https://dandavd.itch.io/horde-carnage-demo) | [Trello](https://trello.com/b/4Ii5Aoep/horde-carnage-roadmap)
 
 ### Echo Protocol
 Co-op multiplayer horror game for up to 4 players where voice loudness is the only light source.

@@ -274,6 +274,7 @@ main > section { margin-top: var(--section); }
 .work__item[data-project='godboard'] { --project: #e8a838; }
 .work__item[data-project='horde-carnage'] { --project: #d9583f; }
 .work__item[data-project='echo-protocol'] { --project: #5fd0d6; }
+.work__item[data-project='hermes-agent-suite'] { --project: #10b981; }
 .work__item[data-project='universal-ai-sync'] { --project: #8f8cff; }
 .work__item[data-project='koara'] { --project: #f0a6c6; }
 .work__more {
@@ -635,6 +636,14 @@ main > section { margin-top: var(--section); }
   --project-line: rgb(95 208 214 / 0.38);
   --project-tint: #0f1516;
 }
+/* Hermes Agent Suite: autonomous terminal emerald and electric cyan */
+.modal[data-project='hermes-agent-suite'] {
+  --project: #10b981;
+  --project-hover: #34d399;
+  --project-ink: #041a12;
+  --project-line: rgb(16 185 129 / 0.38);
+  --project-tint: #0b1511;
+}
 /* Universal AI Sync: blue turning violet, one chat handing over to the next */
 .modal[data-project='universal-ai-sync'] {
   --project: #8f8cff;
@@ -713,6 +722,12 @@ main > section { margin-top: var(--section); }
 /* Horde Carnage: embers rising from under the title */
 .modal[data-project='horde-carnage'] .modal__banner::before {
   background: radial-gradient(ellipse 70% 60% at 15% 110%, rgb(217 88 63 / 0.4), transparent 70%);
+}
+/* Hermes Agent Suite: emerald glow and electric cyan pulse across the terminal */
+.modal[data-project='hermes-agent-suite'] .modal__banner::before {
+  background:
+    radial-gradient(ellipse 55% 60% at 12% 108%, rgb(16 185 129 / 0.35), transparent 70%),
+    radial-gradient(ellipse 45% 50% at 40% 108%, rgb(6 182 212 / 0.22), transparent 70%);
 }
 /* Universal AI Sync: two glows, blue into violet, as a conversation moves across */
 .modal[data-project='universal-ai-sync'] .modal__banner::before {

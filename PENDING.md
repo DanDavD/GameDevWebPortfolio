@@ -3,6 +3,14 @@
 Everything the site still needs. Placeholders are visible on the page on purpose
 (text that starts with "Pending:", a dashed "Placeholder" tag, "Screenshot pending" frames).
 
+## Hermes Agent Suite (filled in from its repo, docs and live workstation)
+
+- [x] Added as first project under the Software tab (`track: 'software'`).
+- [x] First-person engineering copy detailing the $0 Prompt Enhancer, clipboard vision, surgical `SEARCH/REPLACE` disk patching, and 45k-token workspace scanner.
+- [x] Screenshots captured from the running workstation (`cover.jpg`, `cover-portrait.jpg`, `banner.jpg`, `diff-telemetry.jpg`, `workbench.jpg`).
+- [x] Links: GitHub repo (`DanDavD/hermes-agent-suite`) and Trello roadmap (`vDr1joge`).
+- [ ] Record the video demo → `links.youtube`, drop `videoSoon`.
+
 ## Koara (filled in from both repos, Daniel's PRs and his answers)
 
 - [x] Client agreed: the name "Koara" and "in production" can be used.

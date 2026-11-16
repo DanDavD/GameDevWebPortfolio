@@ -42,10 +42,11 @@ Visitors arrive from a CV, LinkedIn or GitHub. They compare candidates quickly, 
 
 ## Evidence on Hand
 
-- CV (Oct 2026), GitHub READMEs, GodBoard (Official 2026 Unity Game Jam), Horde Carnage v1.0.0 and Echo Protocol v0.2.0 releases.
-- GodBoard screenshots from its repository (`assets/projects/godboard/`).
+- CV (Oct 2026), GitHub READMEs, GodBoard (Official 2026 Unity Game Jam), Horde Carnage v1.0.0, Echo Protocol v0.2.0 and Hermes Agent Suite v2.0 releases.
+- GodBoard screenshots from its WebGL build (`assets/projects/godboard/`).
 - Echo Protocol screenshots from its repository (`assets/projects/echo-protocol/`).
 - Horde Carnage gameplay screenshots (`assets/projects/horde-carnage/`).
+- Hermes Agent Suite workstation screenshots (`assets/projects/hermes-agent-suite/`).
 - Never invent testimonials, employers, players, press or numbers.
 
 ## Product Principles

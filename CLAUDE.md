@@ -35,6 +35,7 @@ GameDevWebPortfolio/
 │       ├── godboard/
 │       ├── horde-carnage/
 │       ├── echo-protocol/
+│       ├── hermes-agent-suite/
 │       ├── koara/
 │       └── universal-ai-sync/
 ├── css/

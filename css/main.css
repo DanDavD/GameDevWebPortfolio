@@ -278,6 +278,7 @@ main > section { margin-top: var(--section); }
 .work__item[data-project='universal-ai-sync'] { --project: #8f8cff; }
 .work__item[data-project='koara'] { --project: #f0a6c6; }
 .work__item[data-project='mobirent'] { --project: #48bb78; }
+.work__item[data-project='cleancity-sps'] { --project: #00d26a; }
 .work__more {
   display: inline-flex; align-items: center; gap: 0.5rem;
   margin-top: 1.25rem;
@@ -669,6 +670,14 @@ main > section { margin-top: var(--section); }
   --project-line: rgb(72 187 120 / 0.38);
   --project-tint: #0a150e;
 }
+/* CleanCity SPS: civic emerald green, waste logistics & map routes */
+.modal[data-project='cleancity-sps'] {
+  --project: #00d26a;
+  --project-hover: #2bf087;
+  --project-ink: #031c0e;
+  --project-line: rgb(0 210 106 / 0.38);
+  --project-tint: #07170e;
+}
 
 .modal__inner {
   --pad: clamp(1.5rem, 1rem + 2.5vw, 3.5rem);
@@ -751,6 +760,10 @@ main > section { margin-top: var(--section); }
 /* MobiRent: deep forest green glow over the marketplace */
 .modal[data-project='mobirent'] .modal__banner::before {
   background: radial-gradient(ellipse 65% 60% at 12% 108%, rgb(72 187 120 / 0.3), transparent 70%);
+}
+/* CleanCity SPS: luminous emerald map glow */
+.modal[data-project='cleancity-sps'] .modal__banner::before {
+  background: radial-gradient(ellipse 65% 60% at 12% 108%, rgb(0 210 106 / 0.32), transparent 70%);
 }
 /* Echo Protocol: sound waves spreading out from the title */
 .modal[data-project='echo-protocol'] .modal__banner::before {

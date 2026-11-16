@@ -15,6 +15,13 @@ export const career = [
     end: 'Nov 2026',
   },
   {
+    institution: 'Puzzle Hackathon 2026, UNITEC SPS',
+    credential: '4th Place Finalist (out of 14 teams)',
+    field: 'CleanCity SPS · Full-stack & spatial routing lead',
+    start: 'Aug 2026',
+    end: 'Aug 2026',
+  },
+  {
     institution: 'Koara, client project through UNITEC',
     credential: 'Full-stack developer, team of four',
     field: 'Invoicing and inventory system',

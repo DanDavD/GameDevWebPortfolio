@@ -339,6 +339,68 @@ export const projects = [
     },
   },
   {
+    id: 'cleancity-sps',
+    track: 'software',
+    title: 'CleanCity SPS',
+    quote: 'Civic waste management solved through spatial routing, not guesswork.',
+    role: 'Full-stack developer & routing lead',
+    context: 'Puzzle Hackathon 2026 · 4th place of 14 · Team of 4',
+    year: '2026',
+    stack: ['Next.js 15', 'TypeScript', 'Supabase · PostGIS', 'MapLibre GL', 'Clean Architecture'],
+    stats: [
+      ['Award', '4th place out of 14 engineering teams · UNITEC Puzzle Hackathon 2026'],
+      ['Scope', 'Citizen route tracking & municipal waste fleet dispatch for San Pedro Sula'],
+      ['Role', 'Top contributor (32 commits, 15 merged PRs): routing engine & spatial modeling'],
+      ['Architecture', 'Modular monolith on Clean Architecture (domain, application, infra, ui)'],
+      ['Spatial Stack', 'PostgreSQL + PostGIS, MapLibre GL, OpenStreetMap, OSRM route optimization'],
+    ],
+    blurb: 'Intelligent municipal waste management platform for San Pedro Sula. Stop sequencer, Voronoi spatial zoning, and live truck dispatch in a 48h hackathon.',
+    lede: 'Built by a team of four for the Puzzle Hackathon 2026 at UNITEC San Pedro Sula, earning 4th place out of 14 projects. CleanCity SPS bridges the gap between citizens tracking garbage collection trucks and municipal operators optimizing routes across complex urban sectors.',
+    summary: [
+      'Engineered the automated Stop Sequencer and route optimization pipeline (OSRM) with dynamic zone restrictions to calculate suggested truck paths.',
+      'Modeled colonia boundaries across San Pedro Sula using Voronoi spatial partitioning and OpenStreetMap vector geometries.',
+      'Connected real-time collection telemetry from Supabase/PostGIS into the citizen dashboard, providing live "en camino" and "ya pasó" route indicators.',
+      'Applied strict Clean Architecture across 10 isolated modules, using lint boundaries to enforce zero dependency rule violations between domain and UI layers.',
+      'Led team Git workflow as top contributor (32 commits, 15 merged pull requests) with peer code reviews, feature branching, and staging integration.',
+    ],
+    kicker: 'Civic waste logistics platform · Next.js and PostGIS',
+    cover: {
+      src: 'assets/projects/cleancity-sps/cover.jpg',
+      portrait: 'assets/projects/cleancity-sps/cover-portrait.jpg',
+      alt: 'CleanCity SPS: intelligent waste management and fleet routing interface for San Pedro Sula',
+    },
+    banner: {
+      src: 'assets/projects/cleancity-sps/banner.jpg',
+      position: '50% 30%',
+      dim: 0.45,
+    },
+    gallery: [
+      {
+        src: 'assets/projects/cleancity-sps/citizen-map.jpg',
+        alt: 'CleanCity SPS citizen view showing map routes, collection status, and neighborhood information',
+        caption: 'Citizen portal: Interactive MapLibre GL map showing real-time collection status and recycling collection points.',
+      },
+      {
+        src: 'assets/projects/cleancity-sps/fleet-admin.jpg',
+        alt: 'CleanCity SPS admin view with fleet management, route editor, and live truck operations',
+        caption: 'Operations dispatch: Fleet management dashboard with route editor and live truck tracking.',
+      },
+      {
+        src: 'assets/projects/cleancity-sps/routing-diagram.jpg',
+        alt: 'CleanCity SPS routing logic and spatial architecture diagram',
+        caption: 'Spatial routing architecture: OSRM route sequencing paired with Voronoi colonia boundaries.',
+      },
+    ],
+    links: {
+      repos: [
+        { label: 'Personal repo', href: 'https://github.com/DanDavD/CleanCity-SPS' },
+        { label: 'Hackathon team repo', href: 'https://github.com/Puzzle-Hackathon-2026/beyond-code' },
+      ],
+      youtube: '#',
+    },
+    videoSoon: true,
+  },
+  {
     id: 'koara',
     track: 'software',
     title: 'Koara',

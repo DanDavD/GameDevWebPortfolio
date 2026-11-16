@@ -8,6 +8,13 @@ export const career = [
     end: 'Dec 2027',
   },
   {
+    institution: 'MobiRent, client contract',
+    credential: 'Frontend developer, solo contract',
+    field: 'Investor pitch prototype & marketplace UI',
+    start: 'Nov 2026',
+    end: 'Nov 2026',
+  },
+  {
     institution: 'Koara, client project through UNITEC',
     credential: 'Full-stack developer, team of four',
     field: 'Invoicing and inventory system',

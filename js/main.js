@@ -36,7 +36,7 @@ const cardLinks = [
   ['github', 'Code', 'i-github'],
 ];
 
-const TRACKS = ['games', 'software'];
+const TRACKS = ['client', 'software', 'games'];
 
 function renderTrack(panel, list) {
   const host = panel.querySelector('.work__list');
@@ -232,27 +232,17 @@ function renderCareer() {
 
 function renderSkills() {
   const host = $('#skill-groups');
+  if (!host) return;
   host.replaceChildren();
   for (const { group, items } of skills) {
     const section = el('div', 'skill-group');
     section.dataset.reveal = '';
     const title = el('h3', 'r', group);
-    const list = el('ul');
-    items.forEach(([name, value], index) => {
-      const row = el('li', 'skill');
-      row.style.setProperty('--i', index);
-      const meter = el('div', 'meter');
-      meter.setAttribute('role', 'meter');
-      meter.setAttribute('aria-label', name);
-      meter.setAttribute('aria-valuemin', '0');
-      meter.setAttribute('aria-valuemax', '100');
-      meter.setAttribute('aria-valuenow', String(value));
-      meter.setAttribute('aria-valuetext', `${value} percent`);
-      const fill = el('div', 'meter__fill');
-      fill.style.setProperty('--v', value / 100);
-      meter.append(fill);
-      row.append(el('span', 'skill__name', name), el('span', 'skill__value', `${value}%`), meter);
-      list.append(row);
+    const list = el('ul', 'skill-group__list');
+    items.forEach((name, index) => {
+      const chip = el('li', 'skill-chip r', name);
+      chip.style.setProperty('--i', index);
+      list.append(chip);
     });
     section.append(title, list);
     host.append(section);

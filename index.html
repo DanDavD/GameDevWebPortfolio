@@ -40,11 +40,11 @@
 
   <header class="hero" id="top">
     <nav class="nav" aria-label="Main">
-      <a href="#games" data-track="games">Games</a>
-      <a href="#software" data-track="software">Software</a>
+      <a href="#client" data-track="client">Freelance Web Dev</a>
+      <a href="#software" data-track="software">Personal Software Platforms</a>
+      <a href="#games" data-track="games">Indie Game Dev</a>
       <a href="#path">Path</a>
       <a href="#skills">Skills</a>
-      <a href="#research">Research</a>
       <a class="button button--solid nav__action" href="mailto:danielfdd2004@gmail.com?subject=Hello%20Daniel">Email me</a>
     </nav>
 
@@ -54,9 +54,9 @@
     </figure>
 
     <div class="hero__text">
-      <p class="hero__role">Game Developer<br>Full-Stack Developer</p>
-      <p class="hero__lede">I build games and the software around them, with the same engineering habits.</p>
-      <p class="hero__fact">Three original games and 1,041 automated tests between them, every one of them passing.</p>
+      <p class="hero__role">Software Engineer<br>Indie Game Developer</p>
+      <p class="hero__lede">I build production software platforms and games with the same disciplined engineering habits.</p>
+      <p class="hero__fact">Commercial full-stack systems in daily use, a hackathon finalist platform, and 1,041 automated tests.</p>
       <ul class="links" aria-label="Elsewhere">
         <li><a href="https://github.com/DanDavD" rel="me"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/daniel-david242004/" rel="me"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a></li>
@@ -71,39 +71,51 @@
   <main>
     <section class="work" id="work" aria-labelledby="work-title" data-reveal>
       <div class="work__head">
-        <h2 class="work__title r" id="work-title">Selected work</h2>
-        <!-- Two tabs swap the list in place; each one has its own address (#games, #software) -->
+        <h2 class="sr-only" id="work-title">Work</h2>
+        <!-- Three tabs swap the list in place; each one has its own address (#client, #software, #games) -->
         <div class="tabs r" role="tablist" aria-label="Kind of project" hidden>
-          <button class="tabs__tab" role="tab" type="button" id="tab-games" aria-controls="games" data-track="games">Games<span class="tabs__count"></span></button>
-          <button class="tabs__tab" role="tab" type="button" id="tab-software" aria-controls="software" data-track="software">Software<span class="tabs__count"></span></button>
+          <button class="tabs__tab" role="tab" type="button" id="tab-client" aria-controls="client" data-track="client">Freelance Web Dev<span class="tabs__count"></span></button>
+          <button class="tabs__tab" role="tab" type="button" id="tab-software" aria-controls="software" data-track="software">Personal Software Platforms<span class="tabs__count"></span></button>
+          <button class="tabs__tab" role="tab" type="button" id="tab-games" aria-controls="games" data-track="games">Indie Game Dev<span class="tabs__count"></span></button>
         </div>
       </div>
 
-      <div class="work__panel" id="games" role="tabpanel" aria-labelledby="tab-games" data-track="games">
+      <div class="work__panel" id="client" role="tabpanel" aria-labelledby="tab-client" data-track="client">
         <div class="work__body">
           <ul class="work__list">
             <!-- Rendered from js/data/projects.js. This copy shows without JavaScript. -->
-            <li class="work__item"><a class="work__name" href="https://github.com/DanDavD/UnityGameJam">GodBoard</a></li>
-            <li class="work__item"><a class="work__name" href="https://github.com/DanDavD/Horde-Carnage">Horde Carnage</a></li>
-            <li class="work__item"><a class="work__name" href="https://github.com/DanDavD/EchoGame">Echo Protocol</a></li>
+            <li class="work__item"><a class="work__name" href="https://github.com/AzaliaFlores19/koara_frontend">Koara</a></li>
+            <li class="work__item"><a class="work__name" href="https://lacoladahn.com/">LaColada Honduras</a></li>
+            <li class="work__item"><a class="work__name" href="https://github.com/Rpaz17/EdificiosSandro/tree/develop">Edificios Sandro</a></li>
+            <li class="work__item"><a class="work__name" href="https://github.com/DanDavD/Prototipo_MobiRent">MobiRent</a></li>
           </ul>
           <div class="work__frame" aria-hidden="true"></div>
         </div>
-        <a class="work__next" href="#software" data-track="software">Next: software projects<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="work__next" href="#software" data-track="software">Next: personal software platforms<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
 
       <div class="work__panel" id="software" role="tabpanel" aria-labelledby="tab-software" data-track="software">
         <div class="work__body">
           <ul class="work__list">
             <li class="work__item"><a class="work__name" href="https://github.com/DanDavD/hermes-agent-suite">Hermes Agent Suite</a></li>
-            <li class="work__item"><a class="work__name" href="https://github.com/DanDavD/Prototipo_MobiRent">MobiRent</a></li>
-            <li class="work__item"><a class="work__name" href="https://github.com/DanDavD/CleanCity-SPS">CleanCity SPS</a></li>
-            <li class="work__item"><a class="work__name" href="https://github.com/AzaliaFlores19/koara_frontend">Koara</a></li>
             <li class="work__item"><a class="work__name" href="https://github.com/DanDavD/Universal-AI-Sync">Universal AI Sync</a></li>
+            <li class="work__item"><a class="work__name" href="https://github.com/DanDavD/CleanCity-SPS">CleanCity SPS</a></li>
           </ul>
           <div class="work__frame" aria-hidden="true"></div>
         </div>
-        <a class="work__next" href="#games" data-track="games">Next: games<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="work__next" href="#games" data-track="games">Next: indie game dev<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+
+      <div class="work__panel" id="games" role="tabpanel" aria-labelledby="tab-games" data-track="games">
+        <div class="work__body">
+          <ul class="work__list">
+            <li class="work__item"><a class="work__name" href="https://github.com/DanDavD/UnityGameJam">GodBoard</a></li>
+            <li class="work__item"><a class="work__name" href="https://github.com/DanDavD/Horde-Carnage">Horde Carnage</a></li>
+            <li class="work__item"><a class="work__name" href="https://github.com/DanDavD/EchoGame">Echo Protocol</a></li>
+          </ul>
+          <div class="work__frame" aria-hidden="true"></div>
+        </div>
+        <a class="work__next" href="#client" data-track="client">Next: freelance web dev<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </section>
 
@@ -133,7 +145,11 @@
           <tr><th scope="col">Institution</th><th scope="col">Degree or role</th><th scope="col">Field</th><th scope="col">Dates</th></tr>
         </thead>
         <tbody id="path-rows">
-          <tr><td>UNITEC, Universidad Tecnológica Centroamericana</td><td>B.S. in Computer Systems Engineering</td><td>Computer systems engineering</td><td>2022 to Dec 2027</td></tr>
+          <tr><td>UNITEC, Universidad Tecnológica Centroamericana</td><td>B.S. in Computer Systems Engineering</td><td>Computer systems engineering</td><td>Jun 2022 to Dec 2027</td></tr>
+          <tr><td>MobiRent (Freelance contract)</td><td>Frontend developer, solo contract</td><td>Investor pitch prototype &amp; marketplace UI</td><td>Nov 2026 to Nov 2026</td></tr>
+          <tr><td>LaColada Honduras (Freelance contract)</td><td>Full-stack web developer, solo contract</td><td>Multi-branch commercial web platform &amp; lead funnel</td><td>Sep 2026 to Oct 2026</td></tr>
+          <tr><td>Koara (Freelance contract)</td><td>Full-stack developer, team of four</td><td>Invoicing and inventory system</td><td>May 2026 to Jul 2026</td></tr>
+          <tr><td>Edificios Sandro (Freelance contract)</td><td>Full-stack developer, team of three</td><td>Rental and property management system</td><td>Nov 2025 to Dec 2025</td></tr>
         </tbody>
       </table>
     </section>
@@ -141,21 +157,56 @@
     <section class="skills" id="skills" aria-labelledby="skills-title">
       <div class="skills__aside" data-reveal>
         <h2 class="skills__title r" id="skills-title">Skills</h2>
-        <p class="skills__intro r">Below you will find my self-evaluated skill levels.</p>
+        <p class="skills__intro r">Languages, engines, and architectural tools I use across game systems and full-stack platforms.</p>
       </div>
       <div class="skills__groups" id="skill-groups"></div>
     </section>
-
-    <section class="research" id="research" aria-labelledby="research-title" data-reveal>
-      <img class="research__picture" src="assets/img/fog-treeline-1920.jpg" width="1920" height="1080" loading="lazy"
-           alt="A dark treeline dissolving into fog">
-      <div class="research__text">
-        <h2 class="research__title r" id="research-title">Research</h2>
-        <p class="r">Still working on it — engine papers, technical breakdowns, and game architecture writeups coming soon.</p>
-        <a class="button button--light r" href="https://github.com/DanDavD"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>Follow on GitHub</a>
-      </div>
-    </section>
   </main>
+
+  <footer class="footer" id="footer" data-reveal>
+    <div class="footer__inner">
+      <div class="footer__brand r">
+        <h2 class="footer__name">Daniel David</h2>
+        <p class="footer__tagline">Software Engineer · Indie Game Developer</p>
+        <p class="footer__bio">Building production software platforms, high-reliability web systems, and original indie games with disciplined engineering habits.</p>
+        <div class="footer__actions">
+          <a class="button button--solid" href="mailto:danielfdd2004@gmail.com?subject=Hello%20Daniel">
+            <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Email me
+          </a>
+          <a class="button button--light" href="https://github.com/DanDavD" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer__nav r" aria-label="Footer navigation">
+        <h3 class="footer__heading">Navigation</h3>
+        <ul class="footer__links">
+          <li><a href="#client">Freelance Web Dev</a></li>
+          <li><a href="#software">Personal Software Platforms</a></li>
+          <li><a href="#games">Indie Game Dev</a></li>
+          <li><a href="#about">About &amp; Workflow</a></li>
+          <li><a href="#path">Career &amp; Education</a></li>
+          <li><a href="#skills">Technical Skills</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__social r">
+        <h3 class="footer__heading">Connect</h3>
+        <ul class="footer__links">
+          <li><a href="https://github.com/DanDavD" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/daniel-david242004/" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a></li>
+          <li><a href="https://dandavd.itch.io/" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-itch"/></svg>Itch.io</a></li>
+          <li><a href="mailto:danielfdd2004@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>danielfdd2004@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom r">
+      <p class="footer__copy">© 2026 Daniel David · San Pedro Sula, Honduras · Available for remote engineering worldwide</p>
+      <a class="footer__top" href="#top">Back to top <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+  </footer>
 
 
   <dialog class="modal" id="project-modal" aria-labelledby="modal-title">

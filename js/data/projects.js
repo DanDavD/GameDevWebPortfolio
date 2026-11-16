@@ -392,6 +392,7 @@ export const projects = [
       },
     ],
     links: {
+      demo: 'https://clean-city-sps-kmgk.vercel.app',
       repos: [
         { label: 'Personal repo', href: 'https://github.com/DanDavD/CleanCity-SPS' },
         { label: 'Hackathon team repo', href: 'https://github.com/Puzzle-Hackathon-2026/beyond-code' },

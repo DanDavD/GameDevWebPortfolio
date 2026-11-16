@@ -96,7 +96,7 @@ function render(project) {
     [links.github, 'View on GitHub', 'i-github'],
     ...(links.repos ?? []).map((repo) => [repo.href, repo.label, 'i-github']),
     [links.site, 'Website', 'i-external'],
-    [links.itch, 'Play on Itch.io', 'i-gamepad'],
+    [links.itch, /itch\.io\/jam\//i.test(links.itch ?? '') ? 'Jam submission on Itch.io' : 'Play on Itch.io', 'i-gamepad'],
     [links.release, links.release ? `Release ${links.release.split('/').pop()}` : '', 'i-download'],
     [links.roadmap, /trello\.com/i.test(links.roadmap ?? '') ? 'Roadmap on Trello' : 'Roadmap', 'i-board'],
   ].filter(([href]) => href);

@@ -6,7 +6,7 @@ Everything the site still needs. Placeholders are visible on the page on purpose
 ## Hermes Agent Suite (filled in from its repo, docs and live workstation)
 
 - [x] Added as first project under the Software tab (`track: 'software'`).
-- [x] First-person engineering copy detailing the $0 Prompt Enhancer, clipboard vision, surgical `SEARCH/REPLACE` disk patching, and 45k-token workspace scanner.
+- [x] Concise recruiter-focused copy under `What I built` covering directed 5-agent development, the $0 Prompt Enhancer, clipboard vision, direct-to-disk diff patching, and the native macOS app.
 - [x] Screenshots captured from the running workstation (`cover.jpg`, `cover-portrait.jpg`, `banner.jpg`, `diff-telemetry.jpg`, `workbench.jpg`).
 - [x] Links: GitHub repo (`DanDavD/hermes-agent-suite`) and Trello roadmap (`vDr1joge`).
 - [ ] Record the video demo → `links.youtube`, drop `videoSoon`.
@@ -49,7 +49,8 @@ Everything the site still needs. Placeholders are visible on the page on purpose
 
 ## Games tab
 
-- [ ] GodBoard: Itch.io / browser-playable URL (`links.itch`, `links.play`), GitHub release tag (`links.release`) and YouTube video showcase (`links.youtube`, then drop `videoSoon`).
+- [x] GodBoard: Official Unity Game Jam 2026 submission URL added (`links.itch`).
+- [ ] GodBoard: GitHub release tag (`links.release`) and YouTube video showcase (`links.youtube`, then drop `videoSoon`).
 - [ ] Horde Carnage: is there a version playable in the browser (the Emscripten build)?
       If so, add its URL as `links.play` to show the "Play" button.
 - [ ] Echo Protocol: Itch.io page (`links.itch`) when it exists.

@@ -8,7 +8,7 @@ Guía de desarrollo, arquitectura y convenciones para **Daniel David - Game Deve
 
 - **Propósito**: Portafolio profesional de Daniel David enfocado en conseguir entrevistas como Generalist Game Developer, C++/C# Systems Programmer y Full-Stack Developer.
 - **Enfoque de Diseño**: Atmósfera *Souls-like* oscura, sobria, elegante y profesional. Cero assets con derechos de autor; tipografía y diseño con homenajes sutiles (Garamond, ceniza, oro apagado, resplandor de hoguera, pantalla "YOU DIED" para 404/errores).
-- **Hosting**: GitHub Pages (`https://dandavd.github.io/GameDevWebPortfolio/`).
+- **Hosting**: GitHub Pages (`https://dandavd.github.io/SoftwareDeveloperPortfolio/`).
 - **Restricción Clave**: **Sin build step**, sin bundlers (ni Vite, ni Webpack) y sin dependencias npm en runtime. Todas las rutas de assets deben ser relativas para funcionar en subdirectorios de GitHub Pages.
 
 ---
@@ -30,7 +30,7 @@ GameDevWebPortfolio/
 ├── .claude/skills/        # Skills sincronizadas para Claude
 ├── assets/
 │   ├── fonts/             # Cormorant Garamond y Hanken Grotesk (.woff2)
-│   ├── img/               # Hero showcase, foto de perfil y fondos (hero-showcase.jpg, profile.jpg, fog-treeline-1920.jpg)
+│   ├── img/               # Hero showcase, OpenGraph preview, favicons, foto de perfil y fondos (hero-showcase.jpg, og-preview.jpg, favicon.svg, favicon.png, apple-touch-icon.png, profile.jpg, fog-treeline-1920.jpg)
 │   └── projects/          # Subdirectorios por id de proyecto
 │       ├── godboard/
 │       ├── horde-carnage/

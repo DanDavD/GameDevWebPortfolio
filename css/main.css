@@ -24,15 +24,14 @@
   top: 1.25rem; left: 1.25rem; bottom: 1.25rem;
   width: calc(47% - 1.25rem);
   overflow: hidden;
-  background: var(--raised);
+  background: var(--ground);
   animation: picture-in 1400ms var(--ease-out) both;
 }
 .hero__picture img {
   width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: 50% 50%;
-  transform-origin: 50% 40%;
-  filter: brightness(0.8) contrast(1.06);
+  object-fit: contain;
+  object-position: 50% 42%;
+  transform-origin: 50% 42%;
   animation: picture-settle 2400ms var(--ease-out) both;
 }
 
@@ -103,8 +102,8 @@
   to { clip-path: inset(0 0 0 0); }
 }
 @keyframes picture-settle {
-  from { transform: scale(1.12); }
-  to { transform: scale(1.04); }
+  from { transform: scale(1.06); }
+  to { transform: none; }
 }
 @keyframes rise {
   from { opacity: 0; transform: translateY(18px); }
@@ -1261,7 +1260,7 @@ main > section { margin-top: var(--section); }
   .hero__picture, .hero__picture img, .hero__role, .hero__lede, .hero__fact, .links, .hero__name {
     animation-name: fade;
   }
-  .hero__picture img { transform: scale(1.04); }
+  .hero__picture img { transform: none; }
   .hero__name-inner { animation: none !important; }
   .reveal-ready [data-reveal] .r { transform: none; }
   .reveal-ready .skill-group .meter__fill { transition: opacity 400ms ease; transform: scaleX(var(--v)); opacity: 0; }

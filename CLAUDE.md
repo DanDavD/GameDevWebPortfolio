@@ -30,7 +30,7 @@ GameDevWebPortfolio/
 ├── .claude/skills/        # Skills sincronizadas para Claude
 ├── assets/
 │   ├── fonts/             # Cormorant Garamond y Hanken Grotesk (.woff2)
-│   ├── img/               # Fotos de perfil y fondos (profile.jpg, fog-treeline-1920.jpg)
+│   ├── img/               # Hero showcase, foto de perfil y fondos (hero-showcase.jpg, profile.jpg, fog-treeline-1920.jpg)
 │   └── projects/          # Subdirectorios por id de proyecto
 │       ├── godboard/
 │       ├── horde-carnage/

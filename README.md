@@ -2,7 +2,7 @@
 
 Portfolio and engineering showcase featuring production full-stack web platforms, developer tools, and systems-level games backed by **1,041 automated tests**.
 
-- **Live Portfolio:** [dandavd.github.io/GameDevWebPortfolio](https://dandavd.github.io/GameDevWebPortfolio/)
+- **Live Portfolio:** [dandavd.github.io/SoftwareDeveloperPortfolio](https://dandavd.github.io/SoftwareDeveloperPortfolio/)
 - **GitHub:** [github.com/DanDavD](https://github.com/DanDavD)
 - **LinkedIn:** [linkedin.com/in/daniel-david242004](https://www.linkedin.com/in/daniel-david242004/)
 - **Email:** [danielfdd2004@gmail.com](mailto:danielfdd2004@gmail.com)
@@ -110,8 +110,8 @@ Co-op multiplayer horror game for up to 4 players where voice loudness is the on
 ## Local Setup
 
 ```bash
-git clone https://github.com/DanDavD/GameDevWebPortfolio.git
-cd GameDevWebPortfolio
+git clone https://github.com/DanDavD/SoftwareDeveloperPortfolio.git
+cd SoftwareDeveloperPortfolio
 python3 -m http.server 8080
 # Open http://localhost:8080 in your browser
 ```

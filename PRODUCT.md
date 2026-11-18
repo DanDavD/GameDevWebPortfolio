@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Static HTML5, CSS3 and vanilla JavaScript (ES modules), no build step. Hosted on GitHub Pages as a project site (`dandavd.github.io/GameDevWebPortfolio/`), so every path is relative.
+Static HTML5, CSS3 and vanilla JavaScript (ES modules), no build step. Hosted on GitHub Pages as a project site (`dandavd.github.io/SoftwareDeveloperPortfolio/`), so every path is relative.
 
 ## Users
 

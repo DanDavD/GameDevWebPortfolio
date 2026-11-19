@@ -182,13 +182,12 @@ export const projects = [
       '28 merged pull requests out of the project’s 90.',
     ],
     kicker: 'Rental management web app · React and Express',
-    note: 'There is no public demo: the client runs the system on their own servers with real data. A video demo with sample data is on its way.',
-    videoSoon: true,
+    note: 'There is no public demo: the client runs the system on their own servers with real data. Watch the video walkthrough demo below.',
     banner: { src: 'assets/projects/edificios-sandro/cover.jpg', position: '50% 25%', dim: 0.35 },
     cover: {
       src: 'assets/projects/edificios-sandro/cover.jpg',
       portrait: 'assets/projects/edificios-sandro/cover-portrait.jpg',
-      alt: 'Edificios Sandro property management admin dashboard showing occupancy KPIs and contracts',
+      alt: 'Edificios Sandro lease creation workflow and rental management system',
     },
     gallery: [
       {
@@ -230,7 +229,7 @@ export const projects = [
     links: {
       github: 'https://github.com/Rpaz17/EdificiosSandro/tree/develop',
       roadmap: 'https://trello.com/b/2uon1RFQ/edificios-sandro',
-      youtube: null,
+      youtube: 'https://youtu.be/2X1W7Ss9gsc',
     },
   },
   {

@@ -184,9 +184,49 @@ export const projects = [
     kicker: 'Rental management web app · React and Express',
     note: 'There is no public demo: the client runs the system on their own servers with real data. A video demo with sample data is on its way.',
     videoSoon: true,
-    cover: null,
-    banner: null,
-    gallery: [],
+    banner: { src: 'assets/projects/edificios-sandro/cover.jpg', position: '50% 25%', dim: 0.35 },
+    cover: {
+      src: 'assets/projects/edificios-sandro/cover.jpg',
+      portrait: 'assets/projects/edificios-sandro/cover-portrait.jpg',
+      alt: 'Edificios Sandro property management admin dashboard showing occupancy KPIs and contracts',
+    },
+    gallery: [
+      {
+        src: 'assets/projects/edificios-sandro/dashboard.jpg',
+        alt: 'Edificios Sandro administrative dashboard with occupancy donut chart and monthly delinquency KPIs',
+        caption: 'Admin Dashboard: real-time occupancy KPI metrics, monthly delinquency alerts, and active contract feed.',
+      },
+      {
+        src: 'assets/projects/edificios-sandro/contratos.jpg',
+        alt: 'Edificios Sandro lease contracts management table with tenant codes and monthly rent ledger',
+        caption: 'Lease & Contract Management: automated rent tracking, security deposit ledger, and renewal date ranges.',
+      },
+      {
+        src: 'assets/projects/edificios-sandro/apartamentos.jpg',
+        alt: 'Edificios Sandro apartments catalog displaying branch assignment and occupancy status pills',
+        caption: 'Unit Inventory: multi-building apartment catalog with live occupancy badges and pricing tiers.',
+      },
+      {
+        src: 'assets/projects/edificios-sandro/comprobantes.jpg',
+        alt: 'Edificios Sandro payment verification module with receipt approvals and bank transfer methods',
+        caption: 'Payment Reconciliation: tenant transaction validation, payment method tracking, and verification audits.',
+      },
+      {
+        src: 'assets/projects/edificios-sandro/cliente-portal.jpg',
+        alt: 'Edificios Sandro dedicated tenant self-service portal with active contract status and payment schedule',
+        caption: 'Tenant Self-Service Portal: dedicated client view with lease details, payment due dates, and account balance.',
+      },
+      {
+        src: 'assets/projects/edificios-sandro/mantenimientos.jpg',
+        alt: 'Edificios Sandro maintenance incident tracking table with priority levels and apartment mapping',
+        caption: 'Property Maintenance: unit incident reports, priority triage (Alta/Baja), and resolution workflow.',
+      },
+      {
+        src: 'assets/projects/edificios-sandro/reportes.jpg',
+        alt: 'Edificios Sandro operational reports with income generation curves and Recharts analytics',
+        caption: 'Operations Analytics: date-ranged revenue reports and occupancy tracking built with Recharts.',
+      },
+    ],
     links: {
       github: 'https://github.com/Rpaz17/EdificiosSandro/tree/develop',
       roadmap: 'https://trello.com/b/2uon1RFQ/edificios-sandro',

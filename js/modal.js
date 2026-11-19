@@ -136,9 +136,9 @@ function render(project) {
   const grid = el('div', 'modal__grid');
   grid.append(left, right);
 
-  // Gameplay video
+  // Video demo / gameplay
   const media = el('div', 'media');
-  const isGame = project.track !== 'software';
+  const isGame = project.track === 'games';
   const ytId = getYouTubeId(links.youtube);
   let video;
 

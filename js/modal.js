@@ -143,14 +143,15 @@ function render(project) {
   let video;
 
   if (ytId) {
+    const videoDesc = project.videoSectionTitle ? project.videoSectionTitle.toLowerCase() : (isGame ? 'gameplay showcase' : 'demo');
     video = el('div', 'slot slot--video slot--player');
     video.setAttribute('role', 'region');
-    video.setAttribute('aria-label', `${project.title} video showcase`);
+    video.setAttribute('aria-label', `${project.title} ${videoDesc}`);
 
     const thumb = el('img', 'slot__thumb');
     // A project can show its own still instead of the video's YouTube thumbnail
     thumb.src = project.links.poster ?? `https://img.youtube.com/vi/${ytId}/maxresdefault.jpg`;
-    thumb.alt = `${project.title} gameplay showcase thumbnail`;
+    thumb.alt = `${project.title} ${videoDesc} thumbnail`;
     thumb.loading = 'lazy';
     thumb.decoding = 'async';
     thumb.addEventListener('error', () => {
@@ -163,17 +164,18 @@ function render(project) {
     extLink.href = project.links.youtube;
     extLink.target = '_blank';
     extLink.rel = 'noopener noreferrer';
-    extLink.setAttribute('aria-label', `Watch ${project.title} gameplay showcase on YouTube (opens in new tab)`);
+    extLink.setAttribute('aria-label', `Watch ${project.title} ${videoDesc} on YouTube (opens in new tab)`);
     extLink.append(icon('i-youtube'), document.createTextNode('Watch on YouTube'));
     extLink.addEventListener('click', (e) => e.stopPropagation());
 
     const playBtn = el('button', 'slot__play');
     playBtn.type = 'button';
-    playBtn.setAttribute('aria-label', `Play ${project.title} gameplay showcase`);
+    playBtn.setAttribute('aria-label', `Play ${project.title} ${videoDesc}`);
     playBtn.append(icon('i-play'));
 
     const meta = el('div', 'slot__meta');
-    meta.append(el('strong', null, isGame ? 'Video showcase' : 'Video demo'), el('span', null, 'Play inline · Watch on YouTube'));
+    const metaTitle = project.videoSectionTitle ?? (isGame ? 'Video showcase' : 'Video demo');
+    meta.append(el('strong', null, metaTitle), el('span', null, 'Play inline · Watch on YouTube'));
 
     const playVideo = () => {
       if (video.classList.contains('is-playing')) return;
@@ -181,7 +183,7 @@ function render(project) {
       const iframe = document.createElement('iframe');
       iframe.className = 'slot__iframe';
       iframe.src = `https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0`;
-      iframe.title = `${project.title} gameplay showcase`;
+      iframe.title = `${project.title} ${videoDesc}`;
       iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
       iframe.allowFullscreen = true;
       video.replaceChildren(iframe);
@@ -221,7 +223,8 @@ function render(project) {
   const parts = [bar, banner, grid];
   if (video) {
     media.append(video);
-    parts.push(el('h3', null, isGame ? 'Gameplay' : 'Demo'), media);
+    const videoHeading = project.videoSectionTitle ?? (isGame ? 'Gameplay' : 'Demo');
+    parts.push(el('h3', null, videoHeading), media);
   }
 
   if (project.gallery?.length) {

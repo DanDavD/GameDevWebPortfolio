@@ -50,7 +50,8 @@ Everything the site still needs. Placeholders are visible on the page on purpose
 ## Games tab
 
 - [x] GodBoard: Official Unity Game Jam 2026 submission URL added (`links.itch`).
-- [ ] GodBoard: GitHub release tag (`links.release`) and YouTube video showcase (`links.youtube`, then drop `videoSoon`).
+- [x] GodBoard: YouTube technical breakdown video linked (`links.youtube`).
+- [ ] GodBoard: GitHub release tag (`links.release`) when published.
 - [ ] Horde Carnage: is there a version playable in the browser (the Emscripten build)?
       If so, add its URL as `links.play` to show the "Play" button.
 - [ ] Echo Protocol: Itch.io page (`links.itch`) when it exists.

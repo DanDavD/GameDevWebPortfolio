@@ -503,10 +503,9 @@ export const projects = [
       'Comprehensive UI/UX design in UI Toolkit (UXML and USS design tokens) on an Okabe-Ito colorblind-safe palette, pairing every color with deity iconography, high-contrast typography (Cinzel display vs Inter numerals), and tactile audio-visual juice.',
       'Progressive disclosure onboarding: an interactive 4-quadrant rulebook modal, dedicated deity selection cards with divine power breakdowns, sacred/cursed dice references, and a standalone audio mixing panel with master, music and SFX sliders.',
       'Contextual in-game feedback: turn-order duels with dynamic outcome banners (“SACRED BEATS NEUTRAL”), a live Destiny Die banner with fortune/misfortune callouts, animated reinforcement badges, and skip march confirmations.',
-      'Headless bot-vs-bot simulation engine balancing 1 Human vs 3 AI bots across 2,000 matches, backed by 348 EditMode unit tests across 25 suites covering combat, god powers, and state transitions (11,486 lines of C# + 4,905 of tests).',
+      'Headless bot-vs-bot simulation engine balancing 1 Human vs 3 AI bots across 2,000 matches, backed by 387 EditMode unit tests across 25 suites covering combat, god powers, and state transitions (11,486 lines of C# + 4,905 of tests).',
     ],
     kicker: 'Digital board game of conquest · Unity 6',
-    videoSoon: true,
     cover: {
       src: 'assets/projects/godboard/cover.jpg',
       portrait: 'assets/projects/godboard/cover-portrait.jpg',
@@ -555,7 +554,7 @@ export const projects = [
       itch: 'https://itch.io/jam/official-unity-game-jam-2026/rate/5357436',
       roadmap: 'https://trello.com/b/NE6zNufB/godboard-game-jam',
       release: null,
-      youtube: '#',
+      youtube: 'https://youtu.be/iRFacbJIZeU',
     },
   },
   {

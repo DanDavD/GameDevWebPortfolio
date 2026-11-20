@@ -506,6 +506,8 @@ export const projects = [
       'Headless bot-vs-bot simulation engine balancing 1 Human vs 3 AI bots across 2,000 matches, backed by 387 EditMode unit tests across 25 suites covering combat, god powers, and state transitions (11,486 lines of C# + 4,905 of tests).',
     ],
     kicker: 'Digital board game of conquest · Unity 6',
+    videoLabel: 'Technical breakdown video',
+    videoSectionTitle: 'Technical breakdown',
     cover: {
       src: 'assets/projects/godboard/cover.jpg',
       portrait: 'assets/projects/godboard/cover-portrait.jpg',

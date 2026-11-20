@@ -110,8 +110,9 @@ function renderTrack(panel, list) {
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
       }
-      link.setAttribute('aria-label', `${label}: ${project.title} (opens in a new tab)`);
-      link.append(icon(iconId), document.createTextNode(label));
+      const linkLabel = (key === 'youtube' && project.videoLabel) ? project.videoLabel : label;
+      link.setAttribute('aria-label', `${linkLabel}: ${project.title} (opens in a new tab)`);
+      link.append(icon(iconId), document.createTextNode(linkLabel));
       link.addEventListener('focus', () => setActive(index));
       actions.append(link);
     }
